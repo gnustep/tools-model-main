@@ -16,7 +16,7 @@ This is version @value{NIB2MOD-VERSION} of nib2gmodel.
 @section Installing @samp{nib2gmodel}
 
 The nib2gmodel tool runs on OpenStep 4.x and MacOSX 10.x. It's possible it 
-will run on other versions of OPENSTEP, but it has not been
+will run on other versions of OPENSTEP, if there are any, but it has not been
 tried yet.
 
 Here is a quick-and-dirty example of installation commands:
@@ -27,7 +27,7 @@ gnumake
 gnumake install
 @end example
 
-Note that on many OpenStep systems you must use @samp{gnumake} instead
+Note that on some OpenStep systems you must use @samp{gnumake} instead
 of @samp{make}, since the standard make does not have the correct GNU
 extensions.  For special options you can add to configure, type 
 

@@ -1,10 +1,10 @@
 Announcement
 ************
 
-This is version 0.8.6 of the GNUstep nib2gmodel tool
+This is version 0.9.0 of the GNUstep nib2gmodel tool
 
-   GNUstep is a set of general-purpose Objective-C libraries based on
-the OpenStep standard developed by NeXT (now Apple) Inc. The libraries
+GNUstep is a set of general-purpose Objective-C libraries based on the
+OpenStep standard developed by NeXT (now Apple) Inc. The libraries
 consist of everything from foundation classes, such as dictionaries and
 arrays, to GUI interface classes such as windows, sliders, buttons, etc.
 
@@ -16,8 +16,11 @@ translating nib files. Since the nib format is not documented,
 translation must be done in a round-about way. Coupled with the fact
 that different OpenStep systems store GUI elements in different ways
 leads to non-optimal translation.  It is likely that you'll have to
-hand-edit the gmodel file after translation (Until our interface
-manager, Gorm gets up to speed).
+hand-edit the gmodel file after translation. We recommend, however,
+that after translating the file, you use our interface design program,
+Gorm, to read in the gmodel file, edit it grahpically as you please,
+and then save it into the preferred Gorm format (it's not possible to
+resave it in gmodel format using Gorm).
 
    The file `INSTALL' gives instructions for installing the package.
 
@@ -27,7 +30,7 @@ information.
 Machines
 ========
 
-   GNUstep nib2gmodel has been compiled (sometime in the past) on the
+GNUstep nib2gmodel has been compiled (sometime in the past) on the
 following machines.
 
    * OpenStep 4.x/m68k
@@ -36,23 +39,21 @@ following machines.
 
    * MacOS X Server 1.0
 
-   * MacOS X 10.1
+   * MacOS X 10.X
 
-   * MacOS X 10.2
-
-Noteworthy changes in version `0.8.6'
+Noteworthy changes in version `0.9.0'
 =====================================
 
-   Update for new GNUstep directory layout. Update for MacOSX 10.2
+Minor compilation fixes.
 
 Where can you get it?
 =====================
 
-   The nib2model-0.8.6.tar.gz distribution file has been placed on
+The nib2model-0.9.0.tar.gz distribution file has been placed on
 `ftp.gnustep.org' in `pub/gnustep/dev-apps'.
 
 Where do I send bug reports?
 ============================
 
-   Bug reports can be sent to <bug-gnustep@gnu.org>.
+Bug reports can be sent to <bug-gnustep@gnu.org>.
 

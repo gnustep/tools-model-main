@@ -11,7 +11,7 @@ The currently released version is @samp{@value{NIB2MOD-VERSION}}.
 
 @section Noteworthy changes in version @samp{0.9.0}
 
-Minor configuration fixes.
+Minor compilation fixes.
 
 @c --------------------------------------------------------
 @c Don't need to include older changes in announce

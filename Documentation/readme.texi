@@ -22,7 +22,12 @@ translating nib files. Since the nib format is not documented, translation
 must be done in a round-about way. Coupled with the fact that different OpenStep
 systems store GUI elements in different ways leads to non-optimal translation.
 It is likely that you'll have to hand-edit the gmodel file after 
-translation (Until our interface manager, Gorm gets up to speed).
+translation. We recommend, however, that after
+translating the file, you use our interface design program, Gorm, to
+read in the gmodel file, edit it grahpically as you please, and then
+save it into the preferred Gorm format (it's not possible to resave it
+in gmodel format using Gorm).
+
 
 The file @file{INSTALL} gives instructions for installing the package.
 
@@ -38,7 +43,6 @@ machines.
 @item OpenStep 4.x/m68k
 @item OpenStep 4.x/ix86
 @item MacOS X Server 1.0
-@item MacOS X 10.1
-@item MacOS X 10.2
+@item MacOS X 10.X
 @end itemize
 
