@@ -52,10 +52,11 @@ MAKEDFLAGS = \
       GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU) \
       GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS) \
       LIBRARY_COMBO=$(LIBRARY_COMBO) \
+      OBJCFLAGS="" \
       BUILD_NIB2GMODEL=yes
 
 SHARED_FLAG=no
-GNUSTEP_BUILD_ROOT = $(TOPLEV)/usr/GNUstep/System
+GNUSTEP_BUILD_ROOT = $(TOPLEV)$(prefix)/System
 export GNUSTEP_BUILD_ROOT
 
 include ./Version
@@ -139,7 +140,7 @@ stamp-regenerate: ChangeLog configure
 	$(MAKE) -C Documentation $(MAKEDEFINES) regenerate
 	touch stamp-regenerate
 
-dist: 
+cvs-dist: 
 	@echo Making $(PACKAGE_NAME) release $(VERSION)
 	cvs -z3 export -r $(RELEASE_TAG) $(PACKAGE_NAME)
 	mv $(PACKAGE_NAME) $(PACKAGE_NAME)-$(VERSION)
@@ -151,6 +152,6 @@ snapshot-rtag:
 	@echo Tagging nib2gmodel for snapshot $(SNAPSHOT_TAG)
 	cvs rtag -l $(SNAPSHOT_TAG) $(PACKAGE_NAME)
 
-dist-rtag:
+cvs-tag:
 	@echo Tagging nib2gmodel for release $(RELEASE_TAG)
 	cvs rtag $(RELEASE_TAG) $(PACKAGE_NAME)

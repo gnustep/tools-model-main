@@ -1,3 +1,9 @@
+2004-10-12  Adam Fedor  <fedor@gnu.org>
+
+	* GNUmakefile.in: Define OBJCFLAGS to null.
+	(GNUSTEP_BUILD_ROOT): Define using prefix (which is the same place 
+	make installs it).
+
 2004-09-25  Adam Fedor  <fedor@gnu.org>
 
 	* Version 0.9.0
