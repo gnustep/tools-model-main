@@ -7,12 +7,12 @@ This file documents the installation of the GNUstep nib2gmodel tool.
 distribute, and modify it freely as long as you preserve this copyright
 notice and permission notice.
 
-   This is version 0.7.0 of nib2gmodel.
+   This is version 0.8.0 of nib2gmodel.
 
 Installing `nib2gmodel'
 =======================
 
-   The nib2gmodel tool runs on OpenStep 4.x and MacOSX Server. It's
+   The nib2gmodel tool runs on OpenStep 4.x and MacOSX 10.x. It's
 possible it will run on other versions of OPENSTEP, but it has not been
 tried yet.
 

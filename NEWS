@@ -1,7 +1,12 @@
 NEWS
 ****
 
-The currently released version is `0.7.0'.
+The currently released version is `0.8.0'.
+
+Noteworthy changes in version `0.8.0'
+=====================================
+
+   Bug fixes, including a workaround for a bug in MacOSX 10.1.x.
 
 Noteworthy changes in version `0.7.0'
 =====================================

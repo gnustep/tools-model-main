@@ -46,12 +46,13 @@ could be better.  Send bug reports to @email{bug-gnustep@@gnu.org}.
 
 @section Machines
 
-GNUstep nib2gmodel is known to compile on the following
+GNUstep nib2gmodel has been compiled (in the past) on the following
 machines.
 
 @itemize @bullet
 @item OpenStep 4.x/m68k
 @item OpenStep 4.x/ix86
 @item MacOS X Server 1.0
+@item MacOS X 10.1
 @end itemize
 
