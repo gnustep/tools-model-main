@@ -1,3 +1,9 @@
+1999-09-11  Adam Fedor  <fedor@gnu.org>
+
+	* Version: 0.6.1
+
+	* Minor fix in make/target.make
+
 1999-09-08  Adam Fedor  <fedor@gnu.org>
 
 	* Version: 0.6.0
