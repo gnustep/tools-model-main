@@ -44,11 +44,11 @@ PACKAGE_NAME = nib2gmodel
 TOPLEV = @TOPLEV@
 MAKEDFLAGS = \
       shared=$(SHARED_FLAG) \
-      'GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT)' \
-      'GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU)' \
-      'GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS)' \
-      'LIBRARY_COMBO=$(LIBRARY_COMBO)' \
-      'BUILD_NIB2GMODEL=yes'
+      GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT) \
+      GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU) \
+      GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS) \
+      LIBRARY_COMBO=$(LIBRARY_COMBO) \
+      BUILD_NIB2GMODEL=yes
 
 SHARED_FLAG=no
 GNUSTEP_BUILD_ROOT = $(TOPLEV)$(prefix)/System
@@ -81,11 +81,6 @@ install: FORCE
 	-$(MKDIRS) $(bindir)
 	$(INSTALL_PROGRAM) -m 0755 $(SUBPROJECTS)/$(GNUSTEP_OBJ_DIR)/nib2gmodel$(program_suffix) $(bindir)
 
-subproj-clean subproj-distclean subproj-check::
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT); \
-	export GNUSTEP_SYSTEM_ROOT; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh;
-
 uninstall: FORCE
 	rm -f $(bindir)/nib2gmodel$(program_suffix)
 
@@ -94,29 +89,17 @@ check: subproj-check
 clean-top:
 	rm -f *~
 
-clean: make-temp-install subproj-clean clean-top
+clean: subproj-clean clean-top
 
 distclean-top: clean-top
 	rm -f GNUmakefile
 	rm -rf Makefiles Tools share
 	rm -f config.cache config.log config.status
+	rm -rf $(TOPLEV)$(prefix)
 
-distclean: make-temp-install subproj-distclean distclean-top
+distclean: subproj-distclean distclean-top
 
 FORCE:
-
-# Some subprojects need to be configured after Makefiles have been installed
-late-config:
-
-$(SUBPROJECT)-late-config:  make-temp-install $(SUBPROJECT)/config.status
-$(SUBPROJECT)/config.status: config.status config.cache
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT); \
-	export GNUSTEP_SYSTEM_ROOT; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
-	echo Configuring in $(SUBPROJECT)...; \
-	cd $(SUBPROJECT) && ./configure --prefix=$(install_prefix) \
-		--cache-file=../config.cache \
-		--program-suffix=$(program_suffix)
 
 subproj-all:
 	touch gui/gui.make
@@ -128,28 +111,10 @@ subproj-all:
 	  fi; \
 	done
 
-subproj-install:
-	@target=`echo $@ | sed 's/subproj-//'`; \
-	for f in make $(SUBPROJECTS); do \
-	  echo Making $$target in $$f...; \
-	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
-	    :; else exit $$?; \
-	  fi; \
-	done
-
 subproj-clean subproj-distclean subproj-check::
 	@target=`echo $@ | sed 's/subproj-//'`; \
 	for f in $(SUBPROJECTS) make; do \
 	  echo Making $$target in $$f...; \
-	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
-	    :; else exit $$?; \
-	  fi; \
-	done
-
-subproj-uninstall::
-	@target=`echo $@ | sed 's/subproj-//'`; \
-	for f in $(SUBPROJECTS) make; do \
-	  echo Making $$target in $$f...;\
 	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
 	    :; else exit $$?; \
 	  fi; \

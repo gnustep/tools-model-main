@@ -1,5 +1,10 @@
 2002-12-10  Adam Fedor  <fedor@gnu.org>
 
+	* GNUmakefile.in: Fixup subproj-clean, etc to work.
+	* configure.ac: Revert setting of prefix
+
+2002-12-10  Adam Fedor  <fedor@gnu.org>
+
 	* GNUmakefile.in (LIBRARY_COMBO): Define.
 	Always set SHARED_FLAG=no
 	* configure.ac: Set default prefix to a local directory.

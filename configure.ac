@@ -30,7 +30,15 @@ AC_SUBST(TOPLEV)
 # The GNUstep root directory.
 # This is local just for compiling nib2gmodel
 #--------------------------------------------------------------------
-AC_PREFIX_DEFAULT($TOPLEV/temp_install)
+AC_PREFIX_DEFAULT(`if test "x$GNUSTEP_SYSTEM_ROOT" = "x"; then
+  if test -d C: ; then
+    echo C:/GNUstep;
+  else
+    echo /usr/GNUstep ;
+  fi
+else
+  echo "$GNUSTEP_SYSTEM_ROOT" ;
+fi`)
 
 EXEEXT=
 if test "$program_suffix" != "NONE"; then
