@@ -68,21 +68,20 @@
 # Things to do after checking
 # after-check::
 
-version.tmpl.texi: ../Version
-	rm -f version.tmpl.texi
+version.texi: ../Version
+	rm -f version.texi
 	echo '@set GNUSTEP-VERSION' $(GNUSTEP_VERSION) \
-		> version.tmpl.texi
+		> version.texi
 	echo '@set NIB2MOD-VERSION $(NIB2MOD_VERSION)' \
-		>> version.tmpl.texi
+		>> version.texi
 	echo '@set GNUSTEP-GCC $(GNUSTEP_GCC)' \
-		>> version.tmpl.texi
+		>> version.texi
 	if [ $(GNUSTEP_FTP_MACHINE) ]; then \
 	  echo '@set GNUSTEP-FTP-MACHINE $(GNUSTEP_FTP_MACHINE)' \
-		>> version.tmpl.texi; fi
+		>> version.texi; fi
 	if [ $(GNUSTEP_FTP_DIRECTORY) ]; then \
 	  echo '@set GNUSTEP-FTP-DIRECTORY $(GNUSTEP_FTP_DIRECTORY)' \
-		>> version.tmpl.texi; fi
-	cp version.tmpl.texi version.texi
+		>> version.texi; fi
 
 regenerate: $(DOCUMENT_TEXT_NAME)
 	mv $(TOP_DOC_FILES) ..

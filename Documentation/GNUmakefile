@@ -45,17 +45,17 @@ README \
 ANNOUNCE \
 NEWS
 
-INSTALL_TEXI_FILES = version.tmpl.texi
-INSTALL_TEXT_MAIN = install.tmpl.texi
+INSTALL_TEXI_FILES = version.texi
+INSTALL_TEXT_MAIN = install.texi
 
-README_TEXI_FILES = version.tmpl.texi
-README_TEXT_MAIN = readme.tmpl.texi
+README_TEXI_FILES = version.texi
+README_TEXT_MAIN = readme.texi
 
-ANNOUNCE_TEXI_FILES = version.tmpl.texi news.tmpl.texi
-ANNOUNCE_TEXT_MAIN = announce.tmpl.texi
+ANNOUNCE_TEXI_FILES = version.texi news.texi
+ANNOUNCE_TEXT_MAIN = announce.texi
 
-NEWS_TEXI_FILES = version.tmpl.texi
-NEWS_TEXT_MAIN = news.tmpl.texi
+NEWS_TEXI_FILES = version.texi
+NEWS_TEXT_MAIN = news.texi
 
 #
 # Include in the rules

@@ -79,6 +79,7 @@ Makefiles/GNUstep.sh: $(foreach f, $(MAKE_INSTALL_DEPENDENCIES), make/$(f))
 	$(MAKE) -C make prefix=.. install
 
 install:
+	-$(MKDIRS) $(bindir)
 	$(INSTALL_PROGRAM) -m 0755 $(SUBPROJECTS)/$(GNUSTEP_OBJ_DIR)/nib2gmodel$(program_suffix) $(bindir)
 
 subproj-clean subproj-distclean subproj-check::

@@ -2,7 +2,7 @@
 @set ANNOUNCE-ONLY
 
 @c set the vars GNUSTEP-VERSION and GNUSTEP-GCC
-@include version.tmpl.texi
+@include version.texi
 
 @section What is nib2gmodel?
 @include readme.texi
