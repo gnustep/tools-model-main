@@ -26,20 +26,6 @@ AC_CONFIG_SRCDIR([ChangeLog])
 TOPLEV=`pwd`
 AC_SUBST(TOPLEV)
 
-#--------------------------------------------------------------------
-# The GNUstep root directory.
-# This is local just for compiling nib2gmodel
-#--------------------------------------------------------------------
-AC_PREFIX_DEFAULT(`if test "x$GNUSTEP_SYSTEM_ROOT" = "x"; then
-  if test -d C: ; then
-    echo C:/GNUstep/System;
-  else
-    echo /usr/GNUstep/System;
-  fi
-else
-  echo "$GNUSTEP_SYSTEM_ROOT";
-fi`)
-
 EXEEXT=
 if test "$program_suffix" != "NONE"; then
   EXEEXT=$program_suffix

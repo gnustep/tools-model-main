@@ -55,7 +55,7 @@ MAKEDFLAGS = \
       BUILD_NIB2GMODEL=yes
 
 SHARED_FLAG=no
-GNUSTEP_BUILD_ROOT = $(TOPLEV)$(prefix)
+GNUSTEP_BUILD_ROOT = $(TOPLEV)/usr/GNUstep/System
 export GNUSTEP_BUILD_ROOT
 
 include ./Version
@@ -99,7 +99,7 @@ distclean-top: clean-top
 	rm -f GNUmakefile
 	rm -rf Makefiles Tools share
 	rm -f config.cache config.log config.status
-	rm -rf $(TOPLEV)$(prefix)
+	rm -rf $(GNUSTEP_BUILD_ROOT)
 
 distclean: subproj-distclean distclean-top
 

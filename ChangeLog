@@ -1,3 +1,8 @@
+2004-09-24  Adam Fedor  <fedor@gnu.org>
+
+	* configure.ac: Use default prefix
+	* GNUmakefile.in: Install in proper prefix location.
+
 2003-12-26  Adam Fedor  <fedor@gnu.org>
 
 	* configure.ac: Fix setting of prefix.
