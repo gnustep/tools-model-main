@@ -28,21 +28,10 @@ manager, Gorm gets up to speed).
    The GNUstep web site at <http://www.gnustep.org> contains more
 information.
 
-How can you help?
-=================
-
-   * Check the bug list at the GNUstep web site, or subscribe to the
-     GNUstep newslists for information.  If you can volunteer for any
-     of the projects, or if you have any useful comments send email!
-     <discuss-gnustep@gnu.org>
-
-   * Give us feedback!  Tell us what you like; tell us what you think
-     could be better.  Send bug reports to <bug-gnustep@gnu.org>.
-
 Machines
 ========
 
-   GNUstep nib2gmodel has been compiled (in the past) on the following
+   GNUstep nib2gmodel has been compiled (sometime in the past) on the following
 machines.
 
    * OpenStep 4.x/m68k

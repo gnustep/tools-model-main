@@ -4,13 +4,12 @@
 @c set the vars GNUSTEP-VERSION and GNUSTEP-GCC
 @include version.texi
 
-@section What is nib2gmodel?
 @include readme.texi
 
 @include news.texi
 @clear ANNOUNCE-ONLY
 
-@section Where can you get it?  How can you compile it?
+@section Where can you get it? 
 
 @ifset GNUSTEP-FTP-MACHINE
 The nib2model-@value{NIB2MOD-VERSION}.tar.gz distribution file has 
@@ -21,5 +20,4 @@ been placed on @samp{@value{GNUSTEP-FTP-MACHINE}} in
 @section Where do I send bug reports?
 
 Bug reports can be sent to @email{bug-gnustep@@gnu.org}.
-
 

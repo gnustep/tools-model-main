@@ -1,3 +1,7 @@
+2002-11-15  Adam Fedor  <fedor@gnu.org>
+
+	* configure.ac: Upgrade to autoconf 2.50
+
 2002-07-30  Adam Fedor  <fedor@gnu.org>
 
 	* Version: 0.8.0

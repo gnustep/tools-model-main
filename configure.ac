@@ -1,6 +1,5 @@
-AC_INIT(make/application.make)
 #
-#   configure.in
+#   configure.ac
 #
 #   Copyright (C) 1997 Free Software Foundation, Inc.
 #
@@ -17,6 +16,9 @@ AC_INIT(make/application.make)
 #   License along with this library; see the file COPYING.LIB.
 #   If not, write to the Free Software Foundation,
 #   59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+AC_INIT
+AC_CONFIG_SRCDIR([ChangeLog])
 
 #--------------------------------------------------------------------
 # The GNUstep root directory.
@@ -44,9 +46,9 @@ if test "$program_suffix" != "NONE"; then
 fi
 AC_SUBST(EXEEXT)
 
-AC_CANONICAL_SYSTEM
+AC_CANONICAL_TARGET([])
 AC_PROG_INSTALL
-AC_LN_S
+AC_PROG_LN_S([])
 
 AC_ARG_WITH(library-combo,
 [--with-library-combo		Set default library combinations ],
@@ -69,11 +71,12 @@ AC_SUBST(ac_cv_library_combo)
 # Configure subdirectories
 #
 #--------------------------------------------------------------------
-AC_CONFIG_SUBDIRS(make)
+AC_CONFIG_SUBDIRS([make])
 
 #--------------------------------------------------------------------
 # Produce the output files
 #--------------------------------------------------------------------
-AC_OUTPUT(GNUmakefile)
+AC_CONFIG_FILES([GNUmakefile])
+AC_OUTPUT
 
 
