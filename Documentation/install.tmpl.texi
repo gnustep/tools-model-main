@@ -11,7 +11,7 @@ Copyright (C) 1999 Free Software
 Foundation, Inc.  You may copy, distribute, and modify it freely as long
 as you preserve this copyright notice and permission notice.
 
-This is version @value{NIB2MOD-VERSION} of GNUstep.
+This is version @value{NIB2MOD-VERSION} of nib2gmodel.
 
 @section Installing @samp{gnustep}
 
@@ -22,7 +22,7 @@ tried yet.
 Here is a quick-and-dirty example of installation commands:
 
 @example
-./configure --prefix=/usr/local/GNUstep
+./configure
 make
 make install
 @end example
@@ -35,12 +35,7 @@ type
 
 for special options you can add to configure. 
 
-The nib2gmodel program is intalled in a deep directory structure. For
-instance, on a m68k OpenStep 4.x system, it is installed in
-@file{/usr/local/GNUstep/Tools/m68k/nextstep4/nx-nx-nx-nil/nib2gmodel}.
-You may want to link this file to /usr/local/bin to make it easier to
-use. In the future, we may offer a "shallow" install feature to put
-it automatically in /usr/local/bin (or a similar dir).
+By default, the nib2gmodel program is intalled in /usr/local/bin.
 
 Ignore any messages about "Cannot find libtiff library" during configuration.
 The libtiff library is not needed for nib2gmodel.

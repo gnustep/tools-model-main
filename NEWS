@@ -1,7 +1,13 @@
 NEWS
 ****
 
-The currently released version is `0.6.2'.
+The currently released version is `0.6.5'.
+
+Noteworthy changes in version `0.6.5'
+=====================================
+
+   Menu and Popup Button translation has been fixed. Nib2gmodel now
+runs better on MacOSX.
 
 Noteworthy changes in version `0.6.2'
 =====================================

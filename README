@@ -1,7 +1,7 @@
 README
 ******
 
-This is version 0.6.2 of the GNUstep nib2gmodel tool
+This is version 0.6.5 of the GNUstep nib2gmodel tool
 
    GNUstep is a set of general-purpose Objective-C libraries base on the
 OpenStep standard developed by NeXT (now Apple) Inc. The libraries
@@ -9,27 +9,13 @@ consist of everything from foundation classes, such as dictionaries and
 arrays, to GUI interface classes such as windows, sliders, buttons, etc.
 
    nib2gmodel is a tool developed for GNUstep which converts Apple/NeXT
-OpenStep 4.x nib files (and perhaps other nib files) to the GNUstep
-version of a nib file called a gmodel file.
+OpenStep 4.x and MacOSX nib files (and perhaps other nib files) to the
+GNUstep version of a nib file called a gmodel file.
 
    The file `INSTALL' gives instructions for installing the package.
 
    The GNUstep web site at `http://www.gnustep.org' conatins more
 information.
-
-   For documentation on individual libraries, look in the documentation
-section/directory for that library.
-
-   The GNUstep libraries are covered under the GNU Public Library
-License.  This means you can use these libraries in any program (even
-non-free programs) as long as you make the source and improvements you
-have made to the libraries freely available. You should read the
-COPYING.LIB file for more information.
-
-   GNUstep tools, test programs, and other files are covered under the
-GNU Public License. This means if you make changes to these programs,
-you cannot charge a fee, other than distribution fees, for others to
-use the program. You should read the COPYING file for more information.
 
 How can you help?
 =================
