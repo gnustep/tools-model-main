@@ -1,3 +1,8 @@
+2002-12-02  Adam Fedor  <fedor@gnu.org>
+
+	* GNUmakefile.in (GNUSTEP_OBJ_DIR): Simplify.
+	(header-links): Don't make AppKit and DPSClient links.
+
 2002-11-15  Adam Fedor  <fedor@gnu.org>
 
 	* configure.ac: Upgrade to autoconf 2.50

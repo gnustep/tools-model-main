@@ -38,12 +38,7 @@ GNUSTEP_LIB_COMBO := @ac_cv_library_combo@
 
 GNUSTEP_TARGET_CPU := $(shell ./make/clean_cpu.sh $(GNUSTEP_TARGET_CPU))
 GNUSTEP_TARGET_OS := $(shell ./make/clean_os.sh $(GNUSTEP_TARGET_OS))
-
-ifeq ($(debug),yes)
-GNUSTEP_OBJ_DIR=static_debug_obj/$(GNUSTEP_TARGET_CPU)/$(GNUSTEP_TARGET_OS)/$(GNUSTEP_LIB_COMBO)
-else
-GNUSTEP_OBJ_DIR=static_obj/$(GNUSTEP_TARGET_CPU)/$(GNUSTEP_TARGET_OS)/$(GNUSTEP_LIB_COMBO)
-endif
+GNUSTEP_OBJ_DIR=obj
 
 PACKAGE_NAME = nib2gmodel
 TOPLEV = @TOPLEV@
@@ -167,11 +162,7 @@ subproj-uninstall::
 header-links:
 	cd gui; \
 	rm -rf Version; \
-	rm -rf Headers/AppKit; \
-	rm -rf Headers/DPSClient; \
-	$(LN_S) ../Version; \
-	$(LN_S) gnustep/gui Headers/AppKit; \
-	$(LN_S) gnustep/gui Headers/DPSClient
+	$(LN_S) ../Version; 
 
 configure: configure.in
 	autoconf
