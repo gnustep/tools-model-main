@@ -39,5 +39,6 @@ machines.
 @item OpenStep 4.x/ix86
 @item MacOS X Server 1.0
 @item MacOS X 10.1
+@item MacOS X 10.2
 @end itemize
 

@@ -1,7 +1,12 @@
 NEWS
 ****
 
-The currently released version is `0.8.0'.
+The currently released version is `0.8.6'.
+
+Noteworthy changes in version `0.8.6'
+=====================================
+
+   Update for new GNUstep directory layout. Update for MacOSX 10.2
 
 Noteworthy changes in version `0.8.0'
 =====================================

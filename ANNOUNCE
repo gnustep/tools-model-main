@@ -1,10 +1,7 @@
 Announcement
 ************
 
-What is nib2gmodel?
-===================
-
-This is version 0.8.0 of the GNUstep nib2gmodel tool
+This is version 0.8.6 of the GNUstep nib2gmodel tool
 
    GNUstep is a set of general-purpose Objective-C libraries based on
 the OpenStep standard developed by NeXT (now Apple) Inc. The libraries
@@ -12,8 +9,7 @@ consist of everything from foundation classes, such as dictionaries and
 arrays, to GUI interface classes such as windows, sliders, buttons, etc.
 
    nib2gmodel is a tool developed for GNUstep which converts Apple/NeXT
-OpenStep 4.x and MacOSX nib files (and perhaps other nib files) to the
-GNUstep version of a nib file called a gmodel file.
+OpenStep 4.x and MacOSX nib files to a GNUstep gmodel file.
 
    Note that nib2gmodel does a pretty good, but not a perfect job of
 translating nib files. Since the nib format is not documented,
@@ -31,8 +27,8 @@ information.
 Machines
 ========
 
-   GNUstep nib2gmodel has been compiled (sometime in the past) on the following
-machines.
+   GNUstep nib2gmodel has been compiled (sometime in the past) on the
+following machines.
 
    * OpenStep 4.x/m68k
 
@@ -42,15 +38,17 @@ machines.
 
    * MacOS X 10.1
 
-Noteworthy changes in version `0.8.0'
+   * MacOS X 10.2
+
+Noteworthy changes in version `0.8.6'
 =====================================
 
-   Bug fixes, including a workaround for a bug in MacOSX 10.1.x.
+   Update for new GNUstep directory layout. Update for MacOSX 10.2
 
-Where can you get it?  How can you compile it?
-==============================================
+Where can you get it?
+=====================
 
-   The nib2model-0.8.0.tar.gz distribution file has been placed on
+   The nib2model-0.8.6.tar.gz distribution file has been placed on
 `ftp.gnustep.org' in `pub/gnustep/dev-apps'.
 
 Where do I send bug reports?
