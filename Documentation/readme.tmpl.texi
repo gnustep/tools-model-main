@@ -59,5 +59,6 @@ machines.
 @itemize @bullet
 @item OpenStep 4.x/m68k
 @item OpenStep 4.x/ix86
+@item MacOS X Server
 @end itemize
 

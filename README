@@ -1,7 +1,7 @@
 README
 ******
 
-This is version 0.5.6 of the GNUstep nib2gmodel tool
+This is version 0.6.0 of the GNUstep nib2gmodel tool
 
    GNUstep is a set of general-purpose Objective-C libraries base on the
 OpenStep standard developed by NeXT (now Apple) Inc. The libraries
@@ -50,4 +50,6 @@ Machines
    * OpenStep 4.x/m68k
 
    * OpenStep 4.x/ix86
+
+   * MacOS X Server
 

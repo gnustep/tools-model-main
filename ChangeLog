@@ -1,6 +1,12 @@
+1999-09-08  Adam Fedor  <fedor@gnu.org>
+
+	* Version: 0.6.0
+
+	* Contains bug fixes in gui/Model.
+
 1999-08-03  Adam Fedor  <fedor@gnu.org>
 
-	* config.guess, configu.sub: Update to latest versions
+	* config.guess, config.sub: Update to latest versions
 
 1999-07-16  Adam Fedor  <fedor@gnu.org>
 

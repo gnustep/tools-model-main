@@ -1,7 +1,21 @@
 NEWS
 ****
 
-The currently released version is `0.5.6'.
+The currently released version is `0.6.0'.
+
+Noteworthy changes in version `0.6.0'
+=====================================
+
+   nib2gmodel has been ported to MacOSX.
+
+   Several bug fixes allow better translation of various classes,
+including NSBox and NSPopUpButton.
+
+Noteworthy changes in version `0.5.6'
+=====================================
+
+   The package name has changed from nib2model to nib2gmodel. The name
+of the tool is still called nib2gmodel.
 
 Noteworthy changes in version `0.5.6'
 =====================================
