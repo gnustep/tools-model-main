@@ -30,7 +30,7 @@ INSTALL         = @INSTALL@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_DATA    = @INSTALL_DATA@
 TAR             = tar
-MKDIRS          = $(GNUSTEP_MAKEFILES)/mkinstalldirs
+MKDIRS          = $(GNUSTEP_BUILD_ROOT)/Makefiles/mkinstalldirs
 
 GNUSTEP_TARGET_CPU := @target_cpu@
 GNUSTEP_TARGET_OS := @target_os@
@@ -39,19 +39,21 @@ GNUSTEP_LIB_COMBO := @ac_cv_library_combo@
 GNUSTEP_TARGET_CPU := $(shell ./make/clean_cpu.sh $(GNUSTEP_TARGET_CPU))
 GNUSTEP_TARGET_OS := $(shell ./make/clean_os.sh $(GNUSTEP_TARGET_OS))
 
+ifeq ($(debug),yes)
+GNUSTEP_OBJ_DIR=static_debug_obj/$(GNUSTEP_TARGET_CPU)/$(GNUSTEP_TARGET_OS)/$(GNUSTEP_LIB_COMBO)
+else
 GNUSTEP_OBJ_DIR=static_obj/$(GNUSTEP_TARGET_CPU)/$(GNUSTEP_TARGET_OS)/$(GNUSTEP_LIB_COMBO)
-GNUSTEP_INSTALLATION_DIR = $(prefix)
+endif
+
 PACKAGE_NAME = nib2gmodel
 TOPLEV = @TOPLEV@
 MAKEDFLAGS = \
       shared=no \
-      'GNUSTEP_MAKEFILES=$(TOPLEV)/Makefiles' \
-      'GNUSTEP_INSTALL_PREFIX=$(GNUSTEP_INSTALLATION_DIR)' \
-      'GNUSTEP_INSTALL_LIBRARIES=$(GNUSTEP_INSTALLATION_DIR)/Libraries' \
+      'GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT)' \
       'GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU)' \
       'GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS)'
 
-GNUSTEP_BUILD_ROOT = $(TOPLEV)
+GNUSTEP_BUILD_ROOT = $(TOPLEV)/usr/GNUstep/System
 export GNUSTEP_BUILD_ROOT
 
 include ./Version
@@ -76,40 +78,19 @@ MAKE_INSTALL_DEPENDENCIES = GNUstep.sh config.h config.make GNUmakefile \
 	openapp debugapp opentool rootinstall.sh rootuninstall.sh
 make-temp-install: Makefiles/GNUstep.sh
 Makefiles/GNUstep.sh: $(foreach f, $(MAKE_INSTALL_DEPENDENCIES), make/$(f))
-	$(MAKE) -C make prefix=.. install
+	$(MAKE) -C make special_prefix=.. install
 
 install:
 	-$(MKDIRS) $(bindir)
 	$(INSTALL_PROGRAM) -m 0755 $(SUBPROJECTS)/$(GNUSTEP_OBJ_DIR)/nib2gmodel$(program_suffix) $(bindir)
 
 subproj-clean subproj-distclean subproj-check::
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT); \
 	export GNUSTEP_SYSTEM_ROOT; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
+	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh;
 
-root-install:
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
-	export GNUSTEP_SYSTEM_ROOT; \
-	GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU); \
-	export GNUSTEP_TARGET_CPU; \
-	GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS); \
-	export GNUSTEP_TARGET_OS; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
-	echo Performing root installation tasks; \
-	$(SHELL) $(GNUSTEP_BUILD_ROOT)/Makefiles/rootinstall.sh
-
-uninstall: subproj-uninstall
-
-root-uninstall:
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
-	export GNUSTEP_SYSTEM_ROOT; \
-	GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU); \
-	export GNUSTEP_TARGET_CPU; \
-	GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS); \
-	export GNUSTEP_TARGET_OS; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
-	echo Performing root de-installation tasks; \
-	$(SHELL) $(GNUSTEP_BUILD_ROOT)/Makefiles/rootuninstall.sh
+uninstall:
+	rm -f $(bindir)/nib2gmodel$(program_suffix)
 
 check: subproj-check
 
@@ -130,7 +111,7 @@ late-config:
 
 $(SUBPROJECT)-late-config:  make-temp-install $(SUBPROJECT)/config.status
 $(SUBPROJECT)/config.status: config.status config.cache
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT); \
 	export GNUSTEP_SYSTEM_ROOT; \
 	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
 	echo Configuring in $(SUBPROJECT)...; \
@@ -139,10 +120,8 @@ $(SUBPROJECT)/config.status: config.status config.cache
 		--program-suffix=$(program_suffix)
 
 subproj-all:
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
-	export GNUSTEP_SYSTEM_ROOT; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
-	target=`echo $@ | sed 's/subproj-//'`; \
+	touch gui/gui.make
+	@target=`echo $@ | sed 's/subproj-//'`; \
 	for f in $(SUBPROJECTS); do \
 	  echo Making $$target in $$f...; \
 	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
@@ -151,10 +130,7 @@ subproj-all:
 	done
 
 subproj-install:
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
-	export GNUSTEP_SYSTEM_ROOT; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
-	target=`echo $@ | sed 's/subproj-//'`; \
+	@target=`echo $@ | sed 's/subproj-//'`; \
 	for f in make $(SUBPROJECTS); do \
 	  echo Making $$target in $$f...; \
 	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
@@ -163,10 +139,7 @@ subproj-install:
 	done
 
 subproj-clean subproj-distclean subproj-check::
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
-	export GNUSTEP_SYSTEM_ROOT; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
-	target=`echo $@ | sed 's/subproj-//'`; \
+	@target=`echo $@ | sed 's/subproj-//'`; \
 	for f in $(SUBPROJECTS) make; do \
 	  echo Making $$target in $$f...; \
 	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
@@ -175,10 +148,7 @@ subproj-clean subproj-distclean subproj-check::
 	done
 
 subproj-uninstall::
-	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
-	export GNUSTEP_SYSTEM_ROOT; \
-	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
-	target=`echo $@ | sed 's/subproj-//'`; \
+	@target=`echo $@ | sed 's/subproj-//'`; \
 	for f in $(SUBPROJECTS) make; do \
 	  echo Making $$target in $$f...;\
 	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \

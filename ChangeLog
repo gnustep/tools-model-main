@@ -1,3 +1,8 @@
+2001-05-03  Adam Fedor  <fedor@gnu.org>
+
+	* GNUmakefile.in: Simplifiy and change for new build structure.
+	* configure.in: Remove backend lib_combo.
+
 2000-11-06  Adam Fedor  <fedor@gnu.org>
 
 	* Documentation: Remove use of tmpl.texi files

@@ -48,27 +48,19 @@ AC_CANONICAL_SYSTEM
 AC_PROG_INSTALL
 AC_LN_S
 
-AC_ARG_WITH(library-combo,[
---with-library-combo
-    Define the default library combinations that will be used when you
-type 'make'. You can still change the library combination at runtime
-by specifying the 'library_combo' make variable. For example:
-
-      $ make library_combo=nx-pdo-nx-nil
-],
+AC_ARG_WITH(library-combo,
+[--with-library-combo		Set default library combinations ],
 ac_cv_library_combo=$withval,
 ac_cv_library_combo=
 )
 
 if test "$ac_cv_library_combo" = ""; then
   if test $host_os = nextstep4; then
-    ac_cv_library_combo=nx-nx-nx-nil
+    ac_cv_library_combo=nx-nx-nx
   elif test $host_os = linux-gnu; then
-    ac_cv_library_combo=gnu-gnu-gnu-xgps
-  elif test $host_os = cygwin32; then
-    ac_cv_library_combo=gnu-gnu-gnu-w32gui
+    ac_cv_library_combo=gnu-gnu-gnu
   else
-    ac_cv_library_combo=nx-nx-nx-nil
+    ac_cv_library_combo=nx-nx-nx
   fi
 fi
 AC_SUBST(ac_cv_library_combo)
@@ -82,8 +74,6 @@ AC_CONFIG_SUBDIRS(make)
 #--------------------------------------------------------------------
 # Produce the output files
 #--------------------------------------------------------------------
-AC_LINK_FILES( GNUmakefile.local, gui/Model/GNUmakefile.local)
-
-AC_OUTPUT(GNUmakefile GNUmakefile.local)
+AC_OUTPUT(GNUmakefile)
 
 
