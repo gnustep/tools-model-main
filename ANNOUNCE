@@ -74,7 +74,7 @@ Where can you get it?  How can you compile it?
 ==============================================
 
    The nib2model-0.5.5.tar.gz distribution file has been placed on
-`ftp.gnustep.org' in `pub/gnustep/tools'.
+`ftp.gnustep.org' in `pub/gnustep/dev-apps'.
 
    The `.tar' file is compressed with GNU gzip.  Gzip can be obtained by
 anonymous ftp at any of the GNU archive sites.
