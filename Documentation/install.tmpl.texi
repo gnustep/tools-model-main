@@ -42,3 +42,6 @@ You may want to link this file to /usr/local/bin to make it easier to
 use. In the future, we may offer a "shallow" install feature to put
 it automatically in /usr/local/bin (or a similar dir).
 
+Ignore any messages about "Cannot find libtiff library" during configuration.
+The libtiff library is not needed for nib2gmodel.
+

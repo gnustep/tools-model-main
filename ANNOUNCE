@@ -60,11 +60,6 @@ Machines
 What's new in this release?
 ===========================
 
-   The currently released version is `0.5.6'.
-
-Noteworthy changes in version `0.5.6'
-=====================================
-
    Some of the translation problems have been fixed. Still needs better
 testing.
 
@@ -77,13 +72,8 @@ Where can you get it?  How can you compile it?
    The `.tar' file is compressed with GNU gzip.  Gzip can be obtained by
 anonymous ftp at any of the GNU archive sites.
 
-   For info about FTP via email, send email to `ftpmail@decwrl.dec.com'
-with no subject line, and two-line body with line one `help' and line
-two `quit'.
-
-   The most recent (not necessarily tested) snapshots of GNUstep will be
-placed on `{No Value For "GNUSTEP-SNAP-FTP-MACHINE"}' in
-`{No Value For "GNUSTEP-SNAP-FTP-DIRECTORY"}'.
+   Compiled version are usually available shortly after the release of
+the source code.
 
 Where do I send bug reports?
 ============================
@@ -112,97 +102,4 @@ Emacs distribution or in GNUinfo/ORDERS on prep, or e-mail a request to:
    By ordering your GNU software from the FSF, you help us continue to
 develop more free software.  Media revenues are our primary source of
 support.  Donations to FSF are deductible on US tax returns.
-
-   The above software will soon be at these ftp sites as well.  Please
-try them before `ftp.gnu.org' as it is very busy!
-
-   thanx <gnu@gnu.org>
-
-*ASIA:*
-        - `ftp://ftp.cs.titech.ac.jp'
-
-        - `ftp://utsun.s.u-tokyo.ac.jp/ftpsync/prep'
-
-        - `ftp://cair.kaist.ac.kr/pub/gnu'
-
-        - `ftp://ftp.nectec.or.th/pub/mirrors/gnu'
-
-*AUSTRALIA:*
-        - `ftp://archie.au/gnu' (archie.oz or archie.oz.au for ACSnet)
-
-*AFRICA:*
-        - `ftp://ftp.sun.ac.za/pub/gnu'
-
-*MIDDLE-EAST:*
-        - `ftp://ftp.technion.ac.il/pub/unsupported/gnu'
-
-*EUROPE:*
-        - `ftp://irisa.irisa.fr/pub/gnu'
-
-        - `ftp://ftp.univ-lyon1.fr/pub/gnu'
-
-        - `ftp://ftp.mcc.ac.uk'
-
-        - `ftp://unix.hensa.ac.uk/pub/uunet/systems/gnu'
-
-        - `ftp://src.doc.ic.ac.uk/gnu'
-
-        - `ftp://ftp.ieunet.ie/pub/gnu'
-
-        - `ftp://ftp.eunet.ch'
-
-        - `ftp://nic.switch.ch/mirror/gnu'
-
-        - `ftp://ftp.informatik.rwth-aachen.de/pub/gnu'
-
-        - `ftp://ftp.informatik.tu-muenchen.de'
-
-        - `ftp://ftp.win.tue.nl/pub/gnu'
-
-        - `ftp://ftp.funet.fi/pub/gnu'
-
-        - `ftp://ftp.denet.dk'
-
-        - `ftp://ftp.stacken.kth.se'
-
-        - `ftp://isy.liu.se'
-
-        - `ftp://ftp.luth.se/pub/unix/gnu'
-
-        - `ftp://ftp.sunet.se/pub/gnu'
-
-        - `ftp://archive.eu.net'
-
-*SOUTH AMERICA:*
-        - `ftp://ftp.unicamp.br/pub/gnu'
-
-*WESTERN CANADA:*
-        - `ftp://ftp.cs.ubc.ca/mirror2/gnu'
-
-*USA:*
-        - `ftp://wuarchive.wustl.edu/systems/gnu'
-
-        - `ftp://labrea.stanford.edu'
-
-        - `ftp://ftp.digex.net/pub/gnu'
-
-        - `ftp://ftp.kpc.com/pub/mirror/gnu'
-
-        - `ftp://f.ms.uky.edu/pub3/gnu'
-
-        - `ftp://jaguar.utah.edu/gnustuff'
-
-        - `ftp://ftp.hawaii.edu/mirrors/gnu'
-
-        - `ftp://vixen.cso.uiuc.edu/gnu'
-
-        - `ftp://mrcnext.cso.uiuc.edu/pub/gnu'
-
-        - `ftp://ftp.cs.columbia.edu/archives/gnu/prep'
-
-        - `ftp://col.hp.com/mirrors/gnu'
-
-        - `ftp://gatekeeper.dec.com/pub/GNU'
-
-        - `ftp://ftp.uu.net/systems/gnu'
 

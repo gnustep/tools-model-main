@@ -1,3 +1,7 @@
+1999-05-01  Adam Fedor  <fedor@gnu.org>
+
+	* GNUmakefile (header-links): Remove Version before relinking.
+
 1999-04-09  Adam Fedor  <fedor@gnu.org>
 
 	* Version 0.5.6
