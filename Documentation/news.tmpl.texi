@@ -11,11 +11,17 @@ The currently released version is @samp{@value{NIB2MOD-VERSION}}.
 @section Noteworthy changes in version @samp{0.6.5}
 @end ifclear
 
+Archiving of NSText and NSTextView was added. Better coding of
+NSScrollView, NSButton, Menus, Cells. NSSliderCell added.
+
+@c --------------------------------------------------------
+@c Don't need to include older changes in announce
+@ifclear ANNOUNCE-ONLY
+@section Noteworthy changes in version @samp{0.6.5}
+
 Menu and Popup Button translation has been fixed. Nib2gmodel now
 runs better on MacOSX.
 
-@c Don't need to include older changes in announce
-@ifclear ANNOUNCE-ONLY
 @section Noteworthy changes in version @samp{0.6.2}
 
 A few bug fixes in the gmodel code.
