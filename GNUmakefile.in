@@ -183,6 +183,7 @@ subproj-uninstall::
 
 header-links:
 	cd gui; \
+	rm -rf Version; \
 	rm -rf Headers/AppKit; \
 	rm -rf Headers/DPSClient; \
 	$(LN_S) ../Version; \
