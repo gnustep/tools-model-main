@@ -1,3 +1,13 @@
+2001-07-08  Adam Fedor  <fedor@gnu.org>
+
+	* GNUmakefile.in: Standardize make so it could be built on other
+	targets.
+	* config.guess: Update.
+
+	* Model/GNUmakefile: Likewise.
+	* Model/IBClasses.m: Comment out some stuff that won't compile on
+	non-OPENSTEP machines.
+
 2001-05-03  Adam Fedor  <fedor@gnu.org>
 
 	* GNUmakefile.in: Simplifiy and change for new build structure.

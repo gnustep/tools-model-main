@@ -37,9 +37,6 @@ extensions.  For special options you can add to configure, type
 
 By default, the nib2gmodel program is intalled in /usr/local/bin.
 
-Ignore any messages about "Cannot find libtiff library" during configuration.
-The libtiff library is not needed for nib2gmodel.
-
 @section Converting nibs
 
 To convert a nib file, simply type something like
@@ -51,3 +48,4 @@ nib2gmodel MyNib.nib MyNib.gmodel
 Make sure you have installed the binary and it is in your path. Note
 that you have to be logged in to an OpenStep terminal (such that the program
 can connect to the window server).
+
