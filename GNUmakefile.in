@@ -55,7 +55,7 @@ MAKEDFLAGS = \
       BUILD_NIB2GMODEL=yes
 
 SHARED_FLAG=no
-GNUSTEP_BUILD_ROOT = $(TOPLEV)$(prefix)/System
+GNUSTEP_BUILD_ROOT = $(TOPLEV)$(prefix)
 export GNUSTEP_BUILD_ROOT
 
 include ./Version

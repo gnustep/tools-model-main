@@ -32,12 +32,12 @@ AC_SUBST(TOPLEV)
 #--------------------------------------------------------------------
 AC_PREFIX_DEFAULT(`if test "x$GNUSTEP_SYSTEM_ROOT" = "x"; then
   if test -d C: ; then
-    echo C:/GNUstep;
+    echo C:/GNUstep/System;
   else
-    echo /usr/GNUstep ;
+    echo /usr/GNUstep/System;
   fi
 else
-  echo "$GNUSTEP_SYSTEM_ROOT" ;
+  echo "$GNUSTEP_SYSTEM_ROOT";
 fi`)
 
 EXEEXT=

@@ -1,3 +1,7 @@
+2003-12-26  Adam Fedor  <fedor@gnu.org>
+
+	* configure.ac: Fix setting of prefix.
+
 2003-08-18  Adam Fedor  <fedor@gnu.org>
 
 	* configure.ac: Check for openstep4 host
