@@ -60,6 +60,7 @@ if test "$ac_cv_library_combo" = ""; then
   case "$host_os" in
     darwin*)   ac_cv_library_combo=apple-apple-apple ;;
     nextstep4) ac_cv_library_combo=nx-nx-nx          ;;
+    openstep4) ac_cv_library_combo=nx-nx-nx          ;;
     *)         ac_cv_library_combo=gnu-gnu-gnu       ;;
   esac
 fi
