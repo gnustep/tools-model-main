@@ -50,8 +50,11 @@ Machines
 
    * MacOS X Server
 
-What's new in this release?
-===========================
+Noteworthy changes in version `0.7.0'
+=====================================
+
+   Bug fixes. NSSecureTextField support. Updated for changes in NSMenu
+code, and new NSWindow ivars.
 
 Where can you get it?  How can you compile it?
 ==============================================

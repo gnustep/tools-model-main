@@ -7,6 +7,7 @@
 @chapter NEWS
 
 The currently released version is @samp{@value{NIB2MOD-VERSION}}.
+@end ifclear
 
 @section Noteworthy changes in version @samp{0.7.0}
 
@@ -18,7 +19,6 @@ and new NSWindow ivars.
 @ifclear ANNOUNCE-ONLY
 
 @section Noteworthy changes in version @samp{0.6.5}
-@end ifclear
 
 Archiving of NSText and NSTextView was added. Better coding of
 NSScrollView, NSButton, Menus, Cells. NSSliderCell added.

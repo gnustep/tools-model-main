@@ -81,13 +81,12 @@ all: make-make make-temp-install header-links subproj-all
 make-make:
 	$(MAKE) -C make
 
-MAKE_INSTALL_DEPENDENCIES = GNUstep.sh config.h config.make GNUmakefile \
-	openapp debugapp opentool rootinstall.sh rootuninstall.sh
+MAKE_INSTALL_DEPENDENCIES = GNUstep.sh config.h config.make GNUmakefile
 make-temp-install: Makefiles/GNUstep.sh
 Makefiles/GNUstep.sh: $(foreach f, $(MAKE_INSTALL_DEPENDENCIES), make/$(f))
 	$(MAKE) -C make special_prefix=.. install
 
-install:
+install: FORCE
 	-$(MKDIRS) $(bindir)
 	$(INSTALL_PROGRAM) -m 0755 $(SUBPROJECTS)/$(GNUSTEP_OBJ_DIR)/nib2gmodel$(program_suffix) $(bindir)
 
@@ -96,7 +95,7 @@ subproj-clean subproj-distclean subproj-check::
 	export GNUSTEP_SYSTEM_ROOT; \
 	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh;
 
-uninstall:
+uninstall: FORCE
 	rm -f $(bindir)/nib2gmodel$(program_suffix)
 
 check: subproj-check
@@ -112,6 +111,8 @@ distclean-top: clean-top
 	rm -f config.cache config.log config.status
 
 distclean: make-temp-install subproj-distclean distclean-top
+
+FORCE:
 
 # Some subprojects need to be configured after Makefiles have been installed
 late-config:

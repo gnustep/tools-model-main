@@ -7,7 +7,6 @@
 @section What is nib2gmodel?
 @include readme.texi
 
-@section What's new in this release?
 @include news.texi
 @clear ANNOUNCE-ONLY
 
