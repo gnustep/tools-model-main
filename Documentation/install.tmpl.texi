@@ -1,0 +1,44 @@
+@c -*- texinfo -*-
+@chapter Installation
+
+@ifset TEXT-ONLY
+@include version.texi
+@end ifset
+
+This file documents the installation of the GNUstep nib2gmodel tool.
+
+Copyright (C) 1999 Free Software
+Foundation, Inc.  You may copy, distribute, and modify it freely as long
+as you preserve this copyright notice and permission notice.
+
+This is version @value{NIB2MOD-VERSION} of GNUstep.
+
+@section Installing @samp{gnustep}
+
+The nib2gmodel tool only runs on OpenStep 4.x. It's possible it will
+run on other versions of OPENSTEP, such as MacOS X, but it has not been
+tried yet.
+
+Here is a quick-and-dirty example of installation commands:
+
+@example
+./configure --prefix=/usr/local/GNUstep
+make
+make install
+@end example
+
+type 
+
+@example
+./configure --help
+@end example
+
+for special options you can add to configure. 
+
+The nib2gmodel program is intalled in a deep directory structure. For
+instance, on a m68k OpenStep 4.x system, it is installed in
+@file{/usr/local/GNUstep/Tools/m68k/nextstep4/nx-nx-nx-nil/nib2gmodel}.
+You may want to link this file to /usr/local/bin to make it easier to
+use. In the future, we may offer a "shallow" install feature to put
+it automatically in /usr/local/bin (or a similar dir).
+

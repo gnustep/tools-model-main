@@ -1,0 +1,210 @@
+Announcement
+************
+
+What is nib2gmodel?
+===================
+
+README
+******
+
+This is version 0.5.5 of the GNUstep nib2gmodel tool
+
+   GNUstep is a set of general-purpose Objective-C libraries base on the
+OpenStep standard developed by NeXT (now Apple) Inc. The libraries
+consist of everything from foundation classes, such as dictionaries and
+arrays, to GUI interface classes such as windows, sliders, buttons, etc.
+
+   nib2gmodel is a tool developed for GNUstep which converts Apple/NeXT
+OpenStep 4.x nib files (and perhaps other nib files) to the GNUstep
+version of a nib file called a gmodel file.
+
+   The file `INSTALL' gives instructions for installing the package.
+
+   The GNUstep web site at `http://www.gnustep.org' conatins more
+information.
+
+   For documentation on individual libraries, look in the documentation
+section/directory for that library.
+
+   The GNUstep libraries are covered under the GNU Public Library
+License.  This means you can use these libraries in any program (even
+non-free programs) as long as you make the source and improvements you
+have made to the libraries freely available. You should read the
+COPYING.LIB file for more information.
+
+   GNUstep tools, test programs, and other files are covered under the
+GNU Public License. This means if you make changes to these programs,
+you cannot charge a fee, other than distribution fees, for others to
+use the program. You should read the COPYING file for more information.
+
+How can you help?
+=================
+
+   * Check the bug list at the GNUstep web site, or subscribe to the
+     GNUstep newslists for information.  If you can volunteer for any
+     of the projects, or if you have any useful comments send email!
+     <discuss-gnustep@gnu.org>
+
+   * Give us feedback!  Tell us what you like; tell us what you think
+     could be better.  Send bug reports to <bug-gnustep@gnu.org>.
+
+Machines
+========
+
+   GNUstep nib2gmodel is known to compile on the following machines.
+
+   * OpenStep 4.0/m68k
+
+What's new in this release?
+===========================
+
+   The currently released version is `0.5.5'.
+
+Noteworthy changes in version `0.5.5'
+=====================================
+
+   This is the first release of the nib2gmodel tool on its own. It was
+previouly (and still is) a part of the core libraries.
+
+   There are known problems with this release. Worst of all being that
+nib2gmodel doesn't completely convert all GUI Objects, such as
+Matrices, etc. Hopefully a fixed up version will be coming soon.
+
+Where can you get it?  How can you compile it?
+==============================================
+
+   The nib2model-0.5.5.tar.gz distribution file has been placed on
+`ftp.gnustep.org' in `pub/gnustep/tools'.
+
+   The `.tar' file is compressed with GNU gzip.  Gzip can be obtained by
+anonymous ftp at any of the GNU archive sites.
+
+   For info about FTP via email, send email to `ftpmail@decwrl.dec.com'
+with no subject line, and two-line body with line one `help' and line
+two `quit'.
+
+   The most recent (not necessarily tested) snapshots of GNUstep will be
+placed on `{No Value For "GNUSTEP-SNAP-FTP-MACHINE"}' in
+`{No Value For "GNUSTEP-SNAP-FTP-DIRECTORY"}'.
+
+Where do I send bug reports?
+============================
+
+   Bug reports can be sent to <bug-gnustep@gnu.org>.
+
+Enjoy!
+GNUstep maintainers
+<gnustep-maintainers@gnu.org>
+
+Obtaining GNU Software
+======================
+
+   Check out the GNU web site. (`http://www.gnu.org/')
+
+   Check out the GNUstep web site. (`http://www.gnustep.org/')
+
+   Most GNU software is packed using the GNU `gzip' compression program.
+Source code is available on most sites distributing GNU software.
+
+   For information on how to order GNU software on tape, floppy or
+cd-rom, or printed GNU manuals, check the file etc/ORDERS in the GNU
+Emacs distribution or in GNUinfo/ORDERS on prep, or e-mail a request to:
+<gnu@gnu.org>
+
+   By ordering your GNU software from the FSF, you help us continue to
+develop more free software.  Media revenues are our primary source of
+support.  Donations to FSF are deductible on US tax returns.
+
+   The above software will soon be at these ftp sites as well.  Please
+try them before `ftp.gnu.org' as it is very busy!
+
+   thanx <gnu@gnu.org>
+
+*ASIA:*
+        - `ftp://ftp.cs.titech.ac.jp'
+
+        - `ftp://utsun.s.u-tokyo.ac.jp/ftpsync/prep'
+
+        - `ftp://cair.kaist.ac.kr/pub/gnu'
+
+        - `ftp://ftp.nectec.or.th/pub/mirrors/gnu'
+
+*AUSTRALIA:*
+        - `ftp://archie.au/gnu' (archie.oz or archie.oz.au for ACSnet)
+
+*AFRICA:*
+        - `ftp://ftp.sun.ac.za/pub/gnu'
+
+*MIDDLE-EAST:*
+        - `ftp://ftp.technion.ac.il/pub/unsupported/gnu'
+
+*EUROPE:*
+        - `ftp://irisa.irisa.fr/pub/gnu'
+
+        - `ftp://ftp.univ-lyon1.fr/pub/gnu'
+
+        - `ftp://ftp.mcc.ac.uk'
+
+        - `ftp://unix.hensa.ac.uk/pub/uunet/systems/gnu'
+
+        - `ftp://src.doc.ic.ac.uk/gnu'
+
+        - `ftp://ftp.ieunet.ie/pub/gnu'
+
+        - `ftp://ftp.eunet.ch'
+
+        - `ftp://nic.switch.ch/mirror/gnu'
+
+        - `ftp://ftp.informatik.rwth-aachen.de/pub/gnu'
+
+        - `ftp://ftp.informatik.tu-muenchen.de'
+
+        - `ftp://ftp.win.tue.nl/pub/gnu'
+
+        - `ftp://ftp.funet.fi/pub/gnu'
+
+        - `ftp://ftp.denet.dk'
+
+        - `ftp://ftp.stacken.kth.se'
+
+        - `ftp://isy.liu.se'
+
+        - `ftp://ftp.luth.se/pub/unix/gnu'
+
+        - `ftp://ftp.sunet.se/pub/gnu'
+
+        - `ftp://archive.eu.net'
+
+*SOUTH AMERICA:*
+        - `ftp://ftp.unicamp.br/pub/gnu'
+
+*WESTERN CANADA:*
+        - `ftp://ftp.cs.ubc.ca/mirror2/gnu'
+
+*USA:*
+        - `ftp://wuarchive.wustl.edu/systems/gnu'
+
+        - `ftp://labrea.stanford.edu'
+
+        - `ftp://ftp.digex.net/pub/gnu'
+
+        - `ftp://ftp.kpc.com/pub/mirror/gnu'
+
+        - `ftp://f.ms.uky.edu/pub3/gnu'
+
+        - `ftp://jaguar.utah.edu/gnustuff'
+
+        - `ftp://ftp.hawaii.edu/mirrors/gnu'
+
+        - `ftp://vixen.cso.uiuc.edu/gnu'
+
+        - `ftp://mrcnext.cso.uiuc.edu/pub/gnu'
+
+        - `ftp://ftp.cs.columbia.edu/archives/gnu/prep'
+
+        - `ftp://col.hp.com/mirrors/gnu'
+
+        - `ftp://gatekeeper.dec.com/pub/GNU'
+
+        - `ftp://ftp.uu.net/systems/gnu'
+

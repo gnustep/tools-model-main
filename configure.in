@@ -63,10 +63,12 @@ ac_cv_library_combo=
 if test "$ac_cv_library_combo" = ""; then
   if test $host_os = nextstep4; then
     ac_cv_library_combo=nx-nx-nx-nil
+  elif test $host_os = linux-gnu; then
+    ac_cv_library_combo=gnu-gnu-gnu-xraw
   elif test $host_os = cygwin32; then
     ac_cv_library_combo=gnu-gnu-gnu-w32gui
   else
-    ac_cv_library_combo=gnu-gnu-gnu-xraw
+    ac_cv_library_combo=nx-nx-nx-nil
   fi
 fi
 AC_SUBST(ac_cv_library_combo)
@@ -75,7 +77,7 @@ AC_SUBST(ac_cv_library_combo)
 # Configure subdirectories
 #
 #--------------------------------------------------------------------
-AC_CONFIG_SUBDIRS(make gui)
+AC_CONFIG_SUBDIRS(make)
 
 #--------------------------------------------------------------------
 # Produce the output files

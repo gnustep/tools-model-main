@@ -1,0 +1,15 @@
+NEWS
+****
+
+The currently released version is `0.5.5'.
+
+Noteworthy changes in version `0.5.5'
+=====================================
+
+   This is the first release of the nib2gmodel tool on its own. It was
+previouly (and still is) a part of the core libraries.
+
+   There are known problems with this release. Worst of all being that
+nib2gmodel doesn't completely convert all GUI Objects, such as
+Matrices, etc. Hopefully a fixed up version will be coming soon.
+
