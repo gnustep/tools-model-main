@@ -57,6 +57,7 @@ GNUstep nib2gmodel is known to compile on the following
 machines.
 
 @itemize @bullet
-@item OpenStep 4.0/m68k
+@item OpenStep 4.x/m68k
+@item OpenStep 4.x/ix86
 @end itemize
 

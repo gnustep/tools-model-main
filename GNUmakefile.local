@@ -6,7 +6,7 @@
 # Flags dealing with compiling and linking
 #
 
-TOPLEV = /Users/adam/Source/nib2model
+TOPLEV = /home/users/fedor/src/gstep/nib2model
 BACK_PROJ = @BACK_PROJ@
 
 ifneq ($(EXTENSIONS_VERSION),)
@@ -56,8 +56,8 @@ GNUSTEP_USER_TARGET_LIBRARIES_FLAG =
 GNUSTEP_LOCAL_LIBRARIES_FLAG =
 GNUSTEP_LOCAL_TARGET_LIBRARIES_FLAG =
 # not used when building the core:
-GNUSTEP_SYSTEM_LIBRARIES = /usr/include
-GNUSTEP_SYSTEM_TARGET_LIBRARIES = /usr/include
+GNUSTEP_SYSTEM_LIBRARIES = /usr/lib
+GNUSTEP_SYSTEM_TARGET_LIBRARIES = /usr/lib
 
 ifeq ($(POSTGRES95_DATABASE),yes)
 POSTGRES95_CFLAGS = -I/usr/include/postgresql

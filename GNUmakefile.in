@@ -61,8 +61,8 @@ SUBPROJECTS = gui/Model
 #
 # For making snapshots and releases
 #
-SNAPSHOT_TAG = snapshot-`date +%y%m%d`
-RELEASE_TAG = release-`echo $(VERSION) | tr . -`
+SNAPSHOT_TAG = nibsnap-`date +%y%m%d`
+RELEASE_TAG = nib2mod-`echo $(VERSION) | tr . _`
 
 all: make-make make-temp-install header-links subproj-all
 
@@ -199,36 +199,18 @@ stamp-regenerate: ChangeLog configure
 	$(MAKE) -C Documentation $(MAKEDEFINES) regenerate
 	touch stamp-regenerate
 
-snapshot: 
-	@echo Making $(PACKAGE_NAME) snapshot
-	cvs export -r $(SNAPSHOT_TAG) $(PACKAGE_NAME)
-	rm -f .name
-	echo $(PACKAGE_NAME)-`date +%y%m%d` >.name
-	rm -rf `cat .name`
-	mv $(PACKAGE_NAME) `cat .name`
-	tar -chvf `cat .name`.tar `cat .name`
-	rm -f `cat .name`.tar.gz
-	gzip -9 `cat .name`.tar
-	rm -rf `cat .name`
-
 dist: 
 	@echo Making $(PACKAGE_NAME) release $(VERSION)
-	cvs export -r $(RELEASE_TAG) $(PACKAGE_NAME)
+	cvs -z3 export -r $(RELEASE_TAG) $(PACKAGE_NAME)
 	mv $(PACKAGE_NAME) $(PACKAGE_NAME)-$(VERSION)
-	tar -chvf $(PACKAGE_NAME)-$(VERSION).tar \
+	tar --gzip -chvf $(PACKAGE_NAME)-$(VERSION).tar.gz \
 		$(PACKAGE_NAME)-$(VERSION)
-	rm -f $(PACKAGE_NAME)-$(VERSION).tar.gz
-	gzip -9 $(PACKAGE_NAME)-$(VERSION).tar
 	rm -rf $(PACKAGE_NAME)-$(VERSION)
 
 snapshot-rtag:
-	@echo Tagging GNUstep for snapshot $(SNAPSHOT_TAG)
-	for i in $(DIST_PROJ); do \
-	  cvs rtag -l $(SNAPSHOT_TAG) $(PACKAGE_NAME); \
-	done
+	@echo Tagging nib2model for snapshot $(SNAPSHOT_TAG)
+	cvs rtag -l $(SNAPSHOT_TAG) $(PACKAGE_NAME)
 
 dist-rtag:
-	@echo Tagging GNUstep for release $(RELEASE_TAG)
-	for i in $(DIST_PROJ); do \
-	  cvs rtag -l $(RELEASE_TAG) $(PACKAGE_NAME); \
-	done
+	@echo Tagging nib2model for release $(RELEASE_TAG)
+	cvs rtag $(RELEASE_TAG) $(PACKAGE_NAME)

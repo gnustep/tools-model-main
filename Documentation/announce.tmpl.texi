@@ -14,7 +14,7 @@
 @section Where can you get it?  How can you compile it?
 
 @ifset GNUSTEP-FTP-MACHINE
-The nib2model-@value{GNUSTEP-VERSION}.tar.gz distribution file has 
+The nib2model-@value{NIB2MOD-VERSION}.tar.gz distribution file has 
 been placed on @samp{@value{GNUSTEP-FTP-MACHINE}} in
 @samp{@value{GNUSTEP-FTP-DIRECTORY}}.
 @end ifset
