@@ -8,8 +8,12 @@
 
 The currently released version is @samp{@value{NIB2MOD-VERSION}}.
 
-@section Noteworthy changes in version @samp{0.6.0}
+@section Noteworthy changes in version @samp{0.6.2}
 @end ifclear
+
+A few bug fixes in the gmodel code.
+
+@section Noteworthy changes in version @samp{0.6.0}
 
 nib2gmodel has been ported to MacOSX.
 

@@ -1,7 +1,12 @@
 NEWS
 ****
 
-The currently released version is `0.6.1'.
+The currently released version is `0.6.2'.
+
+Noteworthy changes in version `0.6.2'
+=====================================
+
+   A few bug fixes in the gmodel code.
 
 Noteworthy changes in version `0.6.0'
 =====================================
