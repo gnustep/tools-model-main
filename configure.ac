@@ -57,13 +57,11 @@ ac_cv_library_combo=
 )
 
 if test "$ac_cv_library_combo" = ""; then
-  if test $host_os = nextstep4; then
-    ac_cv_library_combo=nx-nx-nx
-  elif test $host_os = linux-gnu; then
-    ac_cv_library_combo=gnu-gnu-gnu
-  else
-    ac_cv_library_combo=nx-nx-nx
-  fi
+  case "$host_os" in
+    darwin*)   ac_cv_library_combo=apple-apple-apple ;;
+    nextstep4) ac_cv_library_combo=nx-nx-nx          ;;
+    *)         ac_cv_library_combo=gnu-gnu-gnu       ;;
+  esac
 fi
 AC_SUBST(ac_cv_library_combo)
 

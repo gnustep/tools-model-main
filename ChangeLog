@@ -1,3 +1,8 @@
+2003-06-05  Adam Fedor  <fedor@Eldorado.local.>
+
+	* configure.ac: Set library-combo correctly for darwin
+	* GNUmakefile.in: Define GNUSTEP_MAKEFILES
+
 2002-12-10  Adam Fedor  <fedor@gnu.org>
 
 	* GNUmakefile.in: Fixup subproj-clean, etc to work.
