@@ -1,4 +1,4 @@
-2003-06-05  Adam Fedor  <fedor@Eldorado.local.>
+2003-06-05  Adam Fedor  <fedor@gnu.org>
 
 	* configure.ac: Set library-combo correctly for darwin
 	* GNUmakefile.in: Define GNUSTEP_MAKEFILES
