@@ -13,7 +13,7 @@ as you preserve this copyright notice and permission notice.
 
 This is version @value{NIB2MOD-VERSION} of nib2gmodel.
 
-@section Installing @samp{gnustep}
+@section Installing @samp{nib2gmodel}
 
 The nib2gmodel tool runs on OpenStep 4.x and MacOSX Server. It's possible it 
 will run on other versions of OPENSTEP, but it has not been
@@ -27,16 +27,27 @@ make
 make install
 @end example
 
-type 
+Note that on some OpenStep systems you must use @samp{gnumake} instead
+of @samp{make}, since the standard make does not have the correct GNU
+extensions.  For special options you can add to configure, type 
 
 @example
 ./configure --help
 @end example
-
-for special options you can add to configure. 
 
 By default, the nib2gmodel program is intalled in /usr/local/bin.
 
 Ignore any messages about "Cannot find libtiff library" during configuration.
 The libtiff library is not needed for nib2gmodel.
 
+@section Converting nibs
+
+To convert a nib file, simply type something like
+
+@example
+nib2gmodel MyNib.nib MyNib.gmodel
+@end example
+
+Make sure you have installed the binary and it is in your path. Note
+that you have to be logged in to an OpenStep terminal (such that the program
+can connect to the window server).
