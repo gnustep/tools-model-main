@@ -18,6 +18,13 @@ nib2gmodel is a tool developed for GNUstep which converts Apple/NeXT
 OpenStep 4.x and MacOSX nib files (and perhaps other nib files) to the GNUstep
 version of a nib file called a gmodel file.
 
+Note that nib2gmodel does a pretty good, but not a perfect job of 
+translating nib files. Since the nib format is not documented, translation
+must be done in a round-about way. Coupled with the fact that different OpenStep
+systems store GUI elements in different ways leads to non-optimal translation.
+It is likely that you'll have to hand-edit the gmodel file after 
+translation (Until our interface manager, Gorm gets up to speed).
+
 The file @file{INSTALL} gives instructions for installing the package.
 
 The GNUstep web site at @url{http://www.gnustep.org} contains more 
