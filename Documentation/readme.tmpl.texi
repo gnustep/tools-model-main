@@ -20,7 +20,7 @@ version of a nib file called a gmodel file.
 
 The file @file{INSTALL} gives instructions for installing the package.
 
-The GNUstep web site at @url{http://www.gnustep.org} conatins more 
+The GNUstep web site at @url{http://www.gnustep.org} contains more 
 information.
 
 @section How can you help?

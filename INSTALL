@@ -22,11 +22,11 @@ tried yet.
      make
      make install
 
-   type
+   Note that on some OpenStep systems you must use `gnumake' instead of
+`make', since the standard make does not have the correct GNU
+extensions.  For special options you can add to configure, type
 
      ./configure --help
-
-   for special options you can add to configure.
 
    By default, the nib2gmodel program is intalled in /usr/local/bin.
 

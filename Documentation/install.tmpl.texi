@@ -23,11 +23,11 @@ Here is a quick-and-dirty example of installation commands:
 
 @example
 ./configure
-make
-make install
+gnumake
+gnumake install
 @end example
 
-Note that on some OpenStep systems you must use @samp{gnumake} instead
+Note that on many OpenStep systems you must use @samp{gnumake} instead
 of @samp{make}, since the standard make does not have the correct GNU
 extensions.  For special options you can add to configure, type 
 
