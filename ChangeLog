@@ -1,3 +1,9 @@
+2002-12-10  Adam Fedor  <fedor@gnu.org>
+
+	* GNUmakefile.in (LIBRARY_COMBO): Define.
+	Always set SHARED_FLAG=no
+	* configure.ac: Set default prefix to a local directory.
+
 2002-12-03  Adam Fedor  <fedor@gnu.org>
 
 	* GNUmakefile.in (GNUSTEP_BUILD_ROOT): Fix path.

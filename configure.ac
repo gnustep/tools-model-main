@@ -21,24 +21,16 @@ AC_INIT
 AC_CONFIG_SRCDIR([ChangeLog])
 
 #--------------------------------------------------------------------
-# The GNUstep root directory.
-# The user should have the GNUSTEP_SYSTEM_ROOT environment variable
-# defined, but if not then we have a global default.
-#--------------------------------------------------------------------
-AC_PREFIX_DEFAULT(`if test "x$GNUSTEP_SYSTEM_ROOT" = "x"; then
-echo /usr/local ;
-else
-echo $GNUSTEP_SYSTEM_ROOT ;
-fi`)
-if test "x$prefix" = "x"; then
-  prefix=$ac_default_prefix ;
-fi
-
-#--------------------------------------------------------------------
 # top-level dir and arguments
 #--------------------------------------------------------------------
 TOPLEV=`pwd`
 AC_SUBST(TOPLEV)
+
+#--------------------------------------------------------------------
+# The GNUstep root directory.
+# This is local just for compiling nib2gmodel
+#--------------------------------------------------------------------
+AC_PREFIX_DEFAULT($TOPLEV/temp_install)
 
 EXEEXT=
 if test "$program_suffix" != "NONE"; then

@@ -259,11 +259,7 @@ PACKAGE_STRING=
 PACKAGE_BUGREPORT=
 
 ac_unique_file="ChangeLog"
-ac_default_prefix=`if test "x$GNUSTEP_SYSTEM_ROOT" = "x"; then
-echo /usr/local ;
-else
-echo $GNUSTEP_SYSTEM_ROOT ;
-fi`
+ac_default_prefix=$TOPLEV/temp_install
 ac_subdirs_all="$ac_subdirs_all make"
 
 # Initialize some variables set by options.
@@ -1126,19 +1122,15 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
 #--------------------------------------------------------------------
-# The GNUstep root directory.
-# The user should have the GNUSTEP_SYSTEM_ROOT environment variable
-# defined, but if not then we have a global default.
-#--------------------------------------------------------------------
-
-if test "x$prefix" = "x"; then
-  prefix=$ac_default_prefix ;
-fi
-
-#--------------------------------------------------------------------
 # top-level dir and arguments
 #--------------------------------------------------------------------
 TOPLEV=`pwd`
+
+
+#--------------------------------------------------------------------
+# The GNUstep root directory.
+# This is local just for compiling nib2gmodel
+#--------------------------------------------------------------------
 
 
 EXEEXT=

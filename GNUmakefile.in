@@ -34,7 +34,7 @@ MKDIRS          = $(GNUSTEP_BUILD_ROOT)/Makefiles/mkinstalldirs
 
 GNUSTEP_TARGET_CPU := @target_cpu@
 GNUSTEP_TARGET_OS := @target_os@
-GNUSTEP_LIB_COMBO := @ac_cv_library_combo@
+LIBRARY_COMBO := @ac_cv_library_combo@
 
 GNUSTEP_TARGET_CPU := $(shell ./make/clean_cpu.sh $(GNUSTEP_TARGET_CPU))
 GNUSTEP_TARGET_OS := $(shell ./make/clean_os.sh $(GNUSTEP_TARGET_OS))
@@ -47,15 +47,11 @@ MAKEDFLAGS = \
       'GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT)' \
       'GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU)' \
       'GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS)' \
+      'LIBRARY_COMBO=$(LIBRARY_COMBO)' \
       'BUILD_NIB2GMODEL=yes'
 
-ifeq ($(GNUSTEP_SYSTEM_ROOT),)
-  SHARED_FLAG=no
-  GNUSTEP_BUILD_ROOT = $(TOPLEV)$(prefix)/System
-else
-  SHARED_FLAG=yes
-  GNUSTEP_BUILD_ROOT = $(GNUSTEP_SYSTEM_ROOT)
-endif
+SHARED_FLAG=no
+GNUSTEP_BUILD_ROOT = $(TOPLEV)$(prefix)/System
 export GNUSTEP_BUILD_ROOT
 
 include ./Version
