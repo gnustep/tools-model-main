@@ -1,4 +1,26 @@
-1999-10-09    <fedor@gnu.org>
+2000-03-02  Adam Fedor  <fedor@gnu.org>
+
+	* Version 0.6.5 released.
+
+2000-02-10  Adam Fedor  <fedor@gnu.org>
+
+	* config.guess: New version.
+	* config.sub: Likewise.
+
+2000-01-26 Adam Fedor  <fedor@gnu.org>
+
+	* gui/Model/GMAppkit.m ([NSMenuItem -encodeWithModelArchiver:]):
+	Check to see if object responds to various selectors before
+	invoking them.
+
+2000-01-25 Adam Fedor  <fedor@gnu.org>
+
+	* confiure.in: Use /usr/local as default install if GNUSTEP_SYSTEM_ROOT
+	not set.
+	* GNUmakefile.in: Override default installation and just install
+	nib2gmodel directly.
+
+1999-10-09 Adam Fedor  <fedor@gnu.org>
 
 	* Version: 0.6.2
 	* Minor fixes in code.

@@ -22,10 +22,11 @@
 prefix = @prefix@
 install_prefix = $(prefix)
 exec_prefix = @exec_prefix@
+bindir=@bindir@
 program_suffix = @EXEEXT@
 LN_S=@LN_S@
 
-INSTALL         = @HOST_INSTALL@
+INSTALL         = @INSTALL@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_DATA    = @INSTALL_DATA@
 TAR             = tar
@@ -38,6 +39,7 @@ GNUSTEP_LIB_COMBO := @ac_cv_library_combo@
 GNUSTEP_TARGET_CPU := $(shell ./make/clean_cpu.sh $(GNUSTEP_TARGET_CPU))
 GNUSTEP_TARGET_OS := $(shell ./make/clean_os.sh $(GNUSTEP_TARGET_OS))
 
+GNUSTEP_OBJ_DIR=static_obj/$(GNUSTEP_TARGET_CPU)/$(GNUSTEP_TARGET_OS)/$(GNUSTEP_LIB_COMBO)
 GNUSTEP_INSTALLATION_DIR = $(prefix)
 PACKAGE_NAME = nib2gmodel
 TOPLEV = @TOPLEV@
@@ -76,7 +78,8 @@ make-temp-install: Makefiles/GNUstep.sh
 Makefiles/GNUstep.sh: $(foreach f, $(MAKE_INSTALL_DEPENDENCIES), make/$(f))
 	$(MAKE) -C make prefix=.. install
 
-install: subproj-install
+install:
+	$(INSTALL_PROGRAM) -m 0755 $(SUBPROJECTS)/$(GNUSTEP_OBJ_DIR)/nib2gmodel$(program_suffix) $(bindir)
 
 subproj-clean subproj-distclean subproj-check::
 	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \

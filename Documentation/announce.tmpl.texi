@@ -19,36 +19,8 @@ been placed on @samp{@value{GNUSTEP-FTP-MACHINE}} in
 @samp{@value{GNUSTEP-FTP-DIRECTORY}}.
 @end ifset
 
-The @samp{.tar} file is compressed with GNU gzip.  Gzip can be obtained by
-anonymous ftp at any of the GNU archive sites.
-
-Compiled version are usually available shortly after the release of the
-source code.
-
 @section Where do I send bug reports?
 
 Bug reports can be sent to @email{bug-gnustep@@gnu.org}.
 
-@noindent
-Enjoy!@*
-GNUstep maintainers@*
-@email{gnustep-maintainers@@gnu.org}
-
-@section Obtaining GNU Software
-
-Check out the GNU web site. (@url{http://www.gnu.org/})
-
-Check out the GNUstep web site. (@url{http://www.gnustep.org/})
-
-Most GNU software is packed using the GNU `gzip' compression program.
-Source code is available on most sites distributing GNU software.
-
-For information on how to order GNU software on tape, floppy or cd-rom,
-or printed GNU manuals, check the file etc/ORDERS in the GNU Emacs
-distribution or in GNUinfo/ORDERS on prep, or e-mail a request to:
-@email{gnu@@gnu.org}
-
-By ordering your GNU software from the FSF, you help us continue to
-develop more free software.  Media revenues are our primary source of
-support.  Donations to FSF are deductible on US tax returns.
 

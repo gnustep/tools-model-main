@@ -24,8 +24,7 @@ AC_INIT(make/application.make)
 # defined, but if not then we have a global default.
 #--------------------------------------------------------------------
 AC_PREFIX_DEFAULT(`if test "x$GNUSTEP_SYSTEM_ROOT" = "x"; then
-GNUSTEP_SYSTEM_ROOT=/usr/GNUstep ;
-echo $GNUSTEP_SYSTEM_ROOT ;
+echo /usr/local ;
 else
 echo $GNUSTEP_SYSTEM_ROOT ;
 fi`)
@@ -46,6 +45,7 @@ fi
 AC_SUBST(EXEEXT)
 
 AC_CANONICAL_SYSTEM
+AC_PROG_INSTALL
 AC_LN_S
 
 AC_ARG_WITH(library-combo,[
