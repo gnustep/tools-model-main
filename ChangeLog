@@ -1,3 +1,8 @@
+1999-07-16  Adam Fedor  <fedor@gnu.org>
+
+	* GNUmakefile.in: Rename pacakge to nib2gmodel. Statically link
+	library.
+
 1999-05-01  Adam Fedor  <fedor@gnu.org>
 
 	* GNUmakefile.in (header-links): Remove Version before relinking.

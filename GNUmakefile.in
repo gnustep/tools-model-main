@@ -1,4 +1,4 @@
-#  Top level makefile for GNUstep nib2model Package
+#  Top level makefile for GNUstep nib2gmodel Package
 #
 #  Copyright (C) 1997 Free Software Foundation, Inc.
 #
@@ -39,9 +39,10 @@ GNUSTEP_TARGET_CPU := $(shell ./make/clean_cpu.sh $(GNUSTEP_TARGET_CPU))
 GNUSTEP_TARGET_OS := $(shell ./make/clean_os.sh $(GNUSTEP_TARGET_OS))
 
 GNUSTEP_INSTALLATION_DIR = $(prefix)
-PACKAGE_NAME = nib2model
+PACKAGE_NAME = nib2gmodel
 TOPLEV = @TOPLEV@
 MAKEDFLAGS = \
+      shared=no \
       'GNUSTEP_MAKEFILES=$(TOPLEV)/Makefiles' \
       'GNUSTEP_INSTALL_PREFIX=$(GNUSTEP_INSTALLATION_DIR)' \
       'GNUSTEP_INSTALL_LIBRARIES=$(GNUSTEP_INSTALLATION_DIR)/Libraries' \
@@ -62,7 +63,7 @@ SUBPROJECTS = gui/Model
 # For making snapshots and releases
 #
 SNAPSHOT_TAG = nibsnap-`date +%y%m%d`
-RELEASE_TAG = nib2mod-`echo $(VERSION) | tr . _`
+RELEASE_TAG = nib2gmod-`echo $(VERSION) | tr . _`
 
 all: make-make make-temp-install header-links subproj-all
 
@@ -209,9 +210,9 @@ dist:
 	rm -rf $(PACKAGE_NAME)-$(VERSION)
 
 snapshot-rtag:
-	@echo Tagging nib2model for snapshot $(SNAPSHOT_TAG)
+	@echo Tagging nib2gmodel for snapshot $(SNAPSHOT_TAG)
 	cvs rtag -l $(SNAPSHOT_TAG) $(PACKAGE_NAME)
 
 dist-rtag:
-	@echo Tagging nib2model for release $(RELEASE_TAG)
+	@echo Tagging nib2gmodel for release $(RELEASE_TAG)
 	cvs rtag $(RELEASE_TAG) $(PACKAGE_NAME)

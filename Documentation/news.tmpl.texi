@@ -11,10 +11,15 @@ The currently released version is @samp{@value{NIB2MOD-VERSION}}.
 @section Noteworthy changes in version @samp{0.5.6}
 @end ifclear
 
-Some of the translation problems have been fixed. Still needs better testing.
+The package name has changed from nib2model to nib2gmodel. The name of the
+tool is still called nib2gmodel.
 
 @c Don't need to include older changes in announce
 @ifclear ANNOUNCE-ONLY
+@section Noteworthy changes in version @samp{0.5.6}
+
+Some of the translation problems have been fixed. Still needs better testing.
+
 @section Noteworthy changes in version @samp{0.5.5}
 
 This is the first release of the nib2gmodel tool on its own. It was
