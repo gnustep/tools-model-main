@@ -1,0 +1,19 @@
+# This file is included in various Makefile's to get version information.
+# Compatible with Bourne shell syntax, so it can included there too.
+
+# The gcc version required to compile the library.
+GNUSTEP_GCC=2.8.0
+
+# The version number of this release.
+NIB2MOD_MAJOR_VERSION=0
+NIB2MOD_MINOR_VERSION=5
+NIB2MOD_SUBMINOR_VERSION=5
+NIB2MOD_VERSION=${NIB2MOD_MAJOR_VERSION}.${NIB2MOD_MINOR_VERSION}.${NIB2MOD_SUBMINOR_VERSION}
+VERSION=${NIB2MOD_VERSION}
+
+# Other Products we depend on
+GNUSTEP_VERSION=0.5.5
+
+GNUSTEP_FTP_MACHINE=ftp.gnustep.org
+GNUSTEP_FTP_DIRECTORY=pub/gnustep/tools
+

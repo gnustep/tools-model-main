@@ -1,0 +1,227 @@
+#  Top level makefile for GNUstep nib2model Package
+#
+#  Copyright (C) 1997 Free Software Foundation, Inc.
+#
+#  Author: Adam Fedor <fedor@gnu.org>
+#
+#  This file is part of GNUstep.
+#
+#  This library is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#   
+#  You should have received a copy of the GNU General Public
+#  License along with this library; see the file COPYING.LIB.
+#  If not, write to the Free Software Foundation,
+#  59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+#  It would be nice to use the GNUstep Makefile package here, but technically
+#  speaking, it hasn't been made yet.
+
+prefix = @prefix@
+install_prefix = $(prefix)
+exec_prefix = @exec_prefix@
+program_suffix = @EXEEXT@
+LN_S=@LN_S@
+
+GNUSTEP_TARGET_CPU := @target_cpu@
+GNUSTEP_TARGET_OS := @target_os@
+GNUSTEP_LIB_COMBO := @ac_cv_library_combo@
+
+GNUSTEP_TARGET_CPU := $(shell ./make/clean_cpu.sh $(GNUSTEP_TARGET_CPU))
+GNUSTEP_TARGET_OS := $(shell ./make/clean_os.sh $(GNUSTEP_TARGET_OS))
+
+GNUSTEP_INSTALLATION_DIR = $(prefix)
+PACKAGE_NAME = nib2model
+TOPLEV = @TOPLEV@
+MAKEDFLAGS = \
+      'GNUSTEP_MAKEFILES=$(TOPLEV)/Makefiles' \
+      'GNUSTEP_INSTALL_PREFIX=$(GNUSTEP_INSTALLATION_DIR)' \
+      'GNUSTEP_INSTALL_LIBRARIES=$(GNUSTEP_INSTALLATION_DIR)/Libraries' \
+      'GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU)' \
+      'GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS)'
+
+GNUSTEP_BUILD_ROOT = $(TOPLEV)
+export GNUSTEP_BUILD_ROOT
+
+include ./Version
+
+#
+# The list of subproject directories
+#
+SUBPROJECTS = gui/Model
+
+#
+# For making snapshots and releases
+#
+SNAPSHOT_TAG = snapshot-`date +%y%m%d`
+RELEASE_TAG = release-`echo $(VERSION) | tr . -`
+
+all: make-make make-temp-install header-links subproj-all
+
+make-make:
+	$(MAKE) -C make
+
+MAKE_INSTALL_DEPENDENCIES = GNUstep.sh config.h config.make GNUmakefile \
+	openapp debugapp opentool rootinstall.sh rootuninstall.sh
+make-temp-install: Makefiles/GNUstep.sh
+Makefiles/GNUstep.sh: $(foreach f, $(MAKE_INSTALL_DEPENDENCIES), make/$(f))
+	$(MAKE) -C make prefix=.. install
+
+install: subproj-install
+
+root-install:
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	export GNUSTEP_SYSTEM_ROOT; \
+	GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU); \
+	export GNUSTEP_TARGET_CPU; \
+	GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS); \
+	export GNUSTEP_TARGET_OS; \
+	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
+	echo Performing root installation tasks; \
+	$(SHELL) $(GNUSTEP_BUILD_ROOT)/Makefiles/rootinstall.sh
+
+uninstall: subproj-uninstall
+
+root-uninstall:
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	export GNUSTEP_SYSTEM_ROOT; \
+	GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU); \
+	export GNUSTEP_TARGET_CPU; \
+	GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS); \
+	export GNUSTEP_TARGET_OS; \
+	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
+	echo Performing root de-installation tasks; \
+	$(SHELL) $(GNUSTEP_BUILD_ROOT)/Makefiles/rootuninstall.sh
+
+check: subproj-check
+
+clean-top:
+	rm -f *~
+
+clean: make-temp-install subproj-clean clean-top
+
+distclean-top: clean-top
+	rm -f GNUmakefile
+	rm -rf Makefiles Tools share
+	rm -f config.cache config.log config.status
+
+distclean: make-temp-install subproj-distclean distclean-top
+
+# Some subprojects need to be configured after Makefiles have been installed
+late-config:
+
+$(SUBPROJECT)-late-config:  make-temp-install $(SUBPROJECT)/config.status
+$(SUBPROJECT)/config.status: config.status config.cache
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	export GNUSTEP_SYSTEM_ROOT; \
+	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
+	echo Configuring in $(SUBPROJECT)...; \
+	cd $(SUBPROJECT) && ./configure --prefix=$(install_prefix) \
+		--cache-file=../config.cache \
+		--program-suffix=$(program_suffix)
+
+subproj-all:
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	export GNUSTEP_SYSTEM_ROOT; \
+	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
+	target=`echo $@ | sed 's/subproj-//'`; \
+	for f in $(SUBPROJECTS); do \
+	  echo Making $$target in $$f...; \
+	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
+	    :; else exit $$?; \
+	  fi; \
+	done
+
+subproj-install:
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	export GNUSTEP_SYSTEM_ROOT; \
+	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
+	target=`echo $@ | sed 's/subproj-//'`; \
+	for f in make $(SUBPROJECTS); do \
+	  echo Making $$target in $$f...; \
+	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
+	    :; else exit $$?; \
+	  fi; \
+	done
+
+subproj-clean subproj-distclean subproj-check::
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	export GNUSTEP_SYSTEM_ROOT; \
+	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
+	target=`echo $@ | sed 's/subproj-//'`; \
+	for f in $(SUBPROJECTS) make; do \
+	  echo Making $$target in $$f...; \
+	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
+	    :; else exit $$?; \
+	  fi; \
+	done
+
+subproj-uninstall::
+	@GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_INSTALLATION_DIR); \
+	export GNUSTEP_SYSTEM_ROOT; \
+	. $(GNUSTEP_BUILD_ROOT)/Makefiles/GNUstep.sh; \
+	target=`echo $@ | sed 's/subproj-//'`; \
+	for f in $(SUBPROJECTS) make; do \
+	  echo Making $$target in $$f...;\
+	  if $(MAKE) -C $$f ${MAKEDFLAGS} $$target; then \
+	    :; else exit $$?; \
+	  fi; \
+	done
+
+header-links:
+	cd gui; \
+	rm -rf Headers/AppKit; \
+	rm -rf Headers/DPSClient; \
+	$(LN_S) gnustep/gui Headers/AppKit; \
+	$(LN_S) gnustep/gui Headers/DPSClient
+
+configure: configure.in
+	autoconf
+
+# Regenerate automatically generated files
+regenerate: stamp-regenerate
+
+stamp-regenerate: ChangeLog configure
+#	for i in $(SUBPROJECTS); do \
+#	  if $(MAKE) -C $$f ${MAKEDFLAGS} regenerate; then \
+#	    :; else exit $$?; \
+#	  fi; \
+#	done
+	$(MAKE) -C Documentation $(MAKEDEFINES) regenerate
+	touch stamp-regenerate
+
+snapshot: 
+	@echo Making $(PACKAGE_NAME) snapshot
+	cvs export -r $(SNAPSHOT_TAG) $(PACKAGE_NAME)
+	rm -f .name
+	echo $(PACKAGE_NAME)-`date +%y%m%d` >.name
+	rm -rf `cat .name`
+	mv $(PACKAGE_NAME) `cat .name`
+	tar -chvf `cat .name`.tar `cat .name`
+	rm -f `cat .name`.tar.gz
+	gzip -9 `cat .name`.tar
+	rm -rf `cat .name`
+
+dist: 
+	@echo Making $(PACKAGE_NAME) release $(VERSION)
+	cvs export -r $(RELEASE_TAG) $(PACKAGE_NAME)
+	mv $(PACKAGE_NAME) $(PACKAGE_NAME)-$(VERSION)
+	tar -chvf $(PACKAGE_NAME)-$(VERSION).tar \
+		$(PACKAGE_NAME)-$(VERSION)
+	rm -f $(PACKAGE_NAME)-$(VERSION).tar.gz
+	gzip -9 $(PACKAGE_NAME)-$(VERSION).tar
+	rm -rf $(PACKAGE_NAME)-$(VERSION)
+
+snapshot-rtag:
+	@echo Tagging GNUstep for snapshot $(SNAPSHOT_TAG)
+	for i in $(DIST_PROJ); do \
+	  cvs rtag -l $(SNAPSHOT_TAG) $(PACKAGE_NAME); \
+	done
+
+dist-rtag:
+	@echo Tagging GNUstep for release $(RELEASE_TAG)
+	for i in $(DIST_PROJ); do \
+	  cvs rtag -l $(RELEASE_TAG) $(PACKAGE_NAME); \
+	done
