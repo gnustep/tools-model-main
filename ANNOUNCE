@@ -4,7 +4,7 @@ Announcement
 What is nib2gmodel?
 ===================
 
-This is version 0.6.6 of the GNUstep nib2gmodel tool
+This is version 0.7.0 of the GNUstep nib2gmodel tool
 
    GNUstep is a set of general-purpose Objective-C libraries based on
 the OpenStep standard developed by NeXT (now Apple) Inc. The libraries
@@ -53,13 +53,10 @@ Machines
 What's new in this release?
 ===========================
 
-   Archiving of NSText and NSTextView was added. Better coding of
-NSScrollView, NSButton, Menus, Cells. NSSliderCell added.
-
 Where can you get it?  How can you compile it?
 ==============================================
 
-   The nib2model-0.6.6.tar.gz distribution file has been placed on
+   The nib2model-0.7.0.tar.gz distribution file has been placed on
 `ftp.gnustep.org' in `pub/gnustep/dev-apps'.
 
 Where do I send bug reports?

@@ -1,7 +1,13 @@
 NEWS
 ****
 
-The currently released version is `0.6.6'.
+The currently released version is `0.7.0'.
+
+Noteworthy changes in version `0.7.0'
+=====================================
+
+   Bug fixes. NSSecureTextField support. Updated for changes in NSMenu
+code, and new NSWindow ivars.
 
 Noteworthy changes in version `0.6.5'
 =====================================
