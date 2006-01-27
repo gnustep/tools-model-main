@@ -43,6 +43,24 @@ machines.
 @item OpenStep 4.x/m68k
 @item OpenStep 4.x/ix86
 @item MacOS X Server 1.0
-@item MacOS X 10.X
+@item MacOS X 10.1, 10.2, 10.3, 10.4
 @end itemize
+
+@section Troubleshooting
+
+@table @bullet
+@item Message @emph{Could not find image named 'Foo'}
+This is a normal warning that occurs when the AppKit tries to load in an
+image for an object, and can't find it. Most likely you are translating the
+nib from the source directory and the images are not stored in the normal
+install location, so the images can not be found. As long as the images can
+be found normally when the Application is installed, this is fine.
+
+@item Message @emph{Unkown class MyObject}
+You have created a custom class in the nib. Obviously nib2gmodel does not have
+this class, so the AppKit cannot instantiate it when reading in the nib file. 
+However, It should still be converted correctly in the gmodel file.
+
+@end table
+
 

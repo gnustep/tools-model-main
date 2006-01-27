@@ -56,7 +56,7 @@ MAKEDFLAGS = \
       BUILD_NIB2GMODEL=yes
 
 SHARED_FLAG=no
-GNUSTEP_BUILD_ROOT = $(TOPLEV)$(prefix)/System
+GNUSTEP_BUILD_ROOT=$(TOPLEV)$(prefix)/System
 export GNUSTEP_BUILD_ROOT
 
 include ./Version
@@ -72,15 +72,22 @@ SUBPROJECTS = gui/Model
 SNAPSHOT_TAG = nibsnap-`date +%y%m%d`
 RELEASE_TAG = nib2gmod-`echo $(VERSION) | tr . _`
 
-all: make-make make-temp-install header-links subproj-all
+all: make-config make-make make-temp-install header-links subproj-all
+
+make-config: make-config-stamp
+
+make-config-stamp: make/config.make
+	cd make; ./configure --with-config-file=$(TOPLEV)/GNUstep.conf \
+		--prefix=$(TOPLEV)$(prefix)
+	touch make-config-stamp
 
 make-make:
 	$(MAKE) -C make
 
 MAKE_INSTALL_DEPENDENCIES = GNUstep.sh config.h config.make GNUmakefile
-make-temp-install: Makefiles/GNUstep.sh
-Makefiles/GNUstep.sh: $(foreach f, $(MAKE_INSTALL_DEPENDENCIES), make/$(f))
-	$(MAKE) -C make special_prefix=.. install
+make-temp-install: $(GNUSTEP_BUILD_ROOT)/Library/Makefiles/GNUstep.sh
+$(GNUSTEP_BUILD_ROOT)/LibraryMakefiles/GNUstep.sh: $(foreach f, $(MAKE_INSTALL_DEPENDENCIES), make/$(f))
+	$(MAKE) -C make install
 
 install: FORCE
 	-$(MKDIRS) $(bindir)
@@ -101,6 +108,7 @@ distclean-top: clean-top
 	rm -rf Makefiles Tools share
 	rm -f config.cache config.log config.status
 	rm -rf $(GNUSTEP_BUILD_ROOT)
+	rm -f GNUstep.conf make-config-stamp
 
 distclean: subproj-distclean distclean-top
 
