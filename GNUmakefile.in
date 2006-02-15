@@ -64,7 +64,7 @@ include ./Version
 #
 # The list of subproject directories
 #
-SUBPROJECTS = gui/Model
+SUBPROJECTS = test gui/Model
 
 #
 # For making snapshots and releases

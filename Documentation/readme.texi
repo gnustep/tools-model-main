@@ -17,7 +17,11 @@ arrays, to GUI interface classes such as windows, sliders, buttons, etc.
 nib2gmodel is a tool developed for GNUstep which converts Apple/NeXT
 OpenStep 4.x and MacOSX nib files to a GNUstep gmodel file.
 
-Note that nib2gmodel does a pretty good, but not a perfect job of 
+WARNING: nib2gmodel does NOT compile on Linux, FreeBSD, or any other
+OS that doesn't have Apple or NeXT libraries installed (i.e. a NeXTStep
+or Mac OS X machine).
+
+Nib2gmodel does a pretty good, but not a perfect job of 
 translating nib files. Since the nib format is not documented, translation
 must be done in a round-about way. Coupled with the fact that different OpenStep
 systems store GUI elements in different ways leads to non-optimal translation.

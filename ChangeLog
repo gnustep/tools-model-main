@@ -1,3 +1,7 @@
+2006-02-14  Adam Fedor  <fedor@gnu.org>
+
+	* Version 0.11.0
+
 2006-01-26  Adam Fedor  <fedor@gnu.org>
 
 	* configure.ac, GNUmakefile.in: Use new make configuration options
