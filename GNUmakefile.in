@@ -71,6 +71,7 @@ SUBPROJECTS = test gui/Model
 #
 SNAPSHOT_TAG = nibsnap-`date +%y%m%d`
 RELEASE_TAG = nib2gmodel-`echo $(VERSION) | tr . _`
+SVN_BASE=svn+ssh://svn.gna.org/svn/gnustep/
 
 all: make-config make-make make-temp-install header-links subproj-all
 
@@ -171,13 +172,19 @@ svn-tag:
 	rm -f externals.tab
 	svn info svn+ssh://svn.gna.org/svn/gnustep/tools/make/trunk \
 	  | grep Revision \
-	  | awk '{printf "make -r "; printf $2; printf " svn+ssh://svn.gna.org/svn/gnustep/tools/make/trunk\n"}' > externals.tab
-	svn info svn+ssh://svn.gna.org/svn/gnustep/libs/gui/trunk/Model \
-	  | grep Revision \
-	  | awk '{printf "gui/Model -r "; printf $2; printf " svn+ssh://svn.gna.org/svn/gnustep/libs/gui/trunk/Model\n"}' >> externals.tab
+	  | awk '{printf "make -r "; printf $2; printf " svn+ssh://svn.gna.org/svn/gnustep/tools/make/trunk\n"; \
+	          printf "gui/Model -r "; printf $2; printf " svn+ssh://svn.gna.org/svn/gnustep/libs/gui/trunk/Model\n"; \
+	          printf "gui/Headers -r "; printf $2; printf " svn+ssh://svn.gna.org/svn/gnustep/libs/gui/trunk/Headers\n" }' > externals.tab
 	# Have to set externals locally
 	svn co svn+ssh://svn.gna.org/svn/gnustep/tools/nib2gmodel/tags/$(RELEASE_TAG)
 	svn propset svn:externals -F externals.tab $(RELEASE_TAG)
 	cd $(RELEASE_TAG); svn commit -m "Set externals on $(VERSION)"; cd ..
 	#rm -rf $(RELEASE_TAG)
 
+svn-dist: 
+	@echo Making $(PACKAGE_NAME) release $(VERSION)
+	svn export $(SVN_BASE)/tools/$(PACKAGE_NAME)/tags/$(RELEASE_TAG) \
+	  $(PACKAGE_NAME)-$(VERSION)
+	tar --gzip -chvf $(PACKAGE_NAME)-$(VERSION).tar.gz \
+		$(PACKAGE_NAME)-$(VERSION)
+	rm -rf $(PACKAGE_NAME)-$(VERSION)
