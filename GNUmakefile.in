@@ -30,7 +30,7 @@ INSTALL         = @INSTALL@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_DATA    = @INSTALL_DATA@
 TAR             = tar
-MKDIRS          = $(GNUSTEP_BUILD_ROOT)/Makefiles/mkinstalldirs
+MKDIRS          = $(GNUSTEP_BUILD_ROOT)/Library/Makefiles/mkinstalldirs
 
 # FIXME: Should be forced in make also
 GNUSTEP_FLATTENED=yes
@@ -92,7 +92,7 @@ $(GNUSTEP_BUILD_ROOT)/Library/Makefiles/GNUstep.sh: $(foreach f, $(MAKE_INSTALL_
 
 install: FORCE
 	-$(MKDIRS) $(bindir)
-	$(INSTALL_PROGRAM) -m 0755 $(SUBPROJECTS)/$(GNUSTEP_OBJ_DIR)/nib2gmodel$(program_suffix) $(bindir)
+	$(INSTALL_PROGRAM) -m 0755 gui/Model/$(GNUSTEP_OBJ_DIR)/nib2gmodel$(program_suffix) $(bindir)
 
 uninstall: FORCE
 	rm -f $(bindir)/nib2gmodel$(program_suffix)
