@@ -33,7 +33,7 @@ TAR             = tar
 MKDIRS          = $(GNUSTEP_BUILD_ROOT)/Library/Makefiles/mkinstalldirs
 
 # FIXME: Should be forced in make also
-GNUSTEP_FLATTENED=yes
+GNUSTEP_IS_FLATTENED=yes
 GNUSTEP_TARGET_CPU := @target_cpu@
 GNUSTEP_TARGET_OS := @target_os@
 LIBRARY_COMBO := @ac_cv_library_combo@
@@ -48,7 +48,7 @@ MAKEDFLAGS = \
       shared=$(SHARED_FLAG) \
       GNUSTEP_SYSTEM_ROOT=$(GNUSTEP_BUILD_ROOT) \
       GNUSTEP_MAKEFILES=$(GNUSTEP_BUILD_ROOT)/Library/Makefiles \
-      GNUSTEP_FLATTENED=$(GNUSTEP_FLATTENED) \
+      GNUSTEP_IS_FLATTENED=$(GNUSTEP_IS_FLATTENED) \
       GNUSTEP_TARGET_CPU=$(GNUSTEP_TARGET_CPU) \
       GNUSTEP_TARGET_OS=$(GNUSTEP_TARGET_OS) \
       LIBRARY_COMBO=$(LIBRARY_COMBO) \
