@@ -1,8 +1,13 @@
+2006-10-09  Nicola Pero  <nicola.pero@meta-innovation.com>
+
+	* Documentation/GNUmakefile: Do not set GNUSTEP_INSTALLATION_DIR
+	and do not set GNUSTEP_MAKEFILES.
+
 2006-10-02  Nicola Pero  <nicola.pero@meta-innovation.com>
 
 	* GNUmakefile.in: Replaced all occurrences of GNUSTEP_FLATTENED
 	with the new variable GNUSTEP_IS_FLATTENED.
-
+	
 2006-04-06  Adam Fedor  <fedor@gnu.org>
 
 	* GNUmakefile.in: Correct some install issues. See bug #16109.
